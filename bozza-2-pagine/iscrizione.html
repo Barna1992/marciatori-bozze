@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iscriviti a una gara – Marciatori Calalzo – Bozza 2</title>
+<meta name="description" content="Iscrizione online al Giro delle Coste, al Trail delle Coste e al Cadore Km Verticale.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Ridisegno provvisorio del marchio: anelli a "C" + torri + abete -->
+    <symbol id="mark" viewBox="0 0 100 100">
+      <path d="M86.2 21.7A46 46 0 1 0 86.2 78.3" fill="none" stroke="#1F8A4C" stroke-width="3.6"/>
+      <path d="M82.7 24.5A41.5 41.5 0 1 0 82.7 75.5" fill="none" stroke="#C4283C" stroke-width="3.2"/>
+      <path d="M79.2 27.2A37 37 0 1 0 79.2 72.8" fill="none" stroke="#1F8A4C" stroke-width="3"/>
+      <path d="M75.6 30A32.5 32.5 0 1 0 75.6 70" fill="none" stroke="#C4283C" stroke-width="2.4"/>
+      <g fill="#1F8A4C">
+        <path d="M30 72V44h1.5v-6h3v3h2v-3h3v3h2v-3h3v6H45v28z"/>
+        <path d="M55 72V44h1.5v-6h3v3h2v-3h3v3h2v-3h3v6H70v28z"/>
+        <path d="M50 26l-7 13h3.5L41 50h4.5L39 63h22l-6.5-13H59l-5.5-11H57z"/>
+      </g>
+      <rect x="48.6" y="63" width="2.8" height="9" fill="#C4283C"/>
+      <rect x="35.5" y="56" width="4" height="7" rx="2" fill="#fff"/>
+      <rect x="60.5" y="56" width="4" height="7" rx="2" fill="#fff"/>
+    </symbol>
+    <!-- Anelli della pista (emblema e decorazione delle fasce) -->
+    <symbol id="rings" viewBox="0 0 200 200">
+      <path d="M180.6 52.3A92 92 0 1 0 180.6 147.7" fill="none" stroke="#A9DC6E" stroke-width="7"/>
+      <path d="M170.8 58.1A80.5 80.5 0 1 0 170.8 141.9" fill="none" stroke="#C4283C" stroke-width="5"/>
+      <path d="M161 63.9A69 69 0 1 0 161 136.1" fill="none" stroke="#A9DC6E" stroke-width="7"/>
+      <path d="M151.2 69.7A57.5 57.5 0 1 0 151.2 130.3" fill="none" stroke="#C4283C" stroke-width="4"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="draft">Bozza grafica 2 – Pista, versione a pagine. Proposta, non è il sito ufficiale. <a href="../index.html">Confronta le bozze</a></div>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Gruppo Marciatori Calalzo, pagina iniziale">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span><b>Marciatori Calalzo</b><span>Atletica Cadore</span></span>
+    </a>
+    <nav class="nav" aria-label="Menu principale">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="ddGare" id="ddBtn">Gare <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="dd-menu" id="ddGare">
+          <a href="giro-delle-coste.html"><b>Giro e Trail delle Coste</b><span>1 maggio, Calalzo di Cadore</span></a>
+          <a href="km-verticale.html"><b>Cadore Km Verticale</b><span>Fine agosto, da Vallesella alla Croda</span></a>
+        </div>
+      </div>
+      <a href="archivio.html">Archivio</a>
+      <a href="giovani.html">Giovani</a>
+      <a href="club.html">Il club</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <a class="btn btn-g" href="iscrizione.html" aria-current="page">Iscriviti a una gara</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="panel" id="menuBtn" aria-label="Apri il menu">
+      <svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="panel-bg" id="panelBg"></div>
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="panel-top">
+    <p>Menu</p>
+    <button class="close" type="button" id="panelClose" aria-label="Chiudi il menu">×</button>
+  </div>
+  <div class="panel-races">
+    <a href="giro-delle-coste.html"><b>Giro e Trail delle Coste</b><span>7 o 16 km, 1 maggio</span></a>
+    <a href="km-verticale.html"><b>Cadore Km Verticale</b><span>2,7 km e 1000 m di salita, fine agosto</span></a>
+  </div>
+  <nav aria-label="Menu mobile">
+    <a href="index.html">Home</a>
+    <a href="archivio.html">Archivio gare</a>
+    <a href="giovani.html">Giovani</a>
+    <a href="club.html">Il club</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
+  <a class="btn btn-l" href="iscrizione.html">Iscriviti a una gara</a>
+</div>
+
+<main id="main">
+<div class="ph-band">
+  <svg class="rings-bg" aria-hidden="true"><use href="#rings"/></svg>
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">Home</a> / Iscrizioni</p>
+    <h1>Iscriviti a una gara</h1>
+    <p class="lead">Tre passaggi. Il certificato medico puoi caricarlo adesso o mandarlo più tardi, e scegli tu se pagare online, con bonifico o in contanti al ritiro del pettorale.</p>
+  </div>
+</div>
+
+<section aria-label="Modulo di iscrizione" style="padding-top:40px">
+  <div class="wrap">
+    <ol class="steps" id="steps" aria-label="Passaggi dell'iscrizione">
+      <li aria-current="step"><b>1</b>Gara e atleta</li>
+      <li><b>2</b>Certificato</li>
+      <li><b>3</b>Pagamento</li>
+    </ol>
+
+    <div class="reg" id="regArea">
+      <aside class="summary" aria-live="polite" id="summary">
+        <h2>La tua iscrizione</h2>
+        <dl>
+          <div><dt>Gara</dt><dd id="s-gara">Giro delle Coste</dd></div>
+          <div><dt>Quota online</dt><dd class="price num" id="s-quota">12 €</dd></div>
+          <div class="s-more"><dt>Data</dt><dd id="s-data">Sabato 1 maggio 2027 (da confermare)</dd></div>
+          <div class="s-more"><dt>Iscrizioni online fino a</dt><dd id="s-dead">Mercoledì 28 aprile</dd></div>
+          <div class="s-more"><dt>Certificato</dt><dd><span class="st st-ok" id="s-cert">Lo carichi adesso</span></dd></div>
+          <div class="s-more"><dt>Pagamento</dt><dd><span class="st st-ok" id="s-pag">Online adesso</span></dd></div>
+        </dl>
+        <p class="small s-more" id="s-day">In piazza la mattina della gara: 15 €</p>
+      </aside>
+
+      <form id="regForm" novalidate>
+        <div class="errors" id="errors" role="alert" tabindex="-1">
+          <p>Controlla questi campi prima di andare avanti:</p>
+          <ul id="errList"></ul>
+        </div>
+
+        <!-- Passaggio 1 -->
+        <div data-step="0">
+          <div class="step-head"><h2>Gara e atleta</h2><p>Scegli la gara e scrivi i tuoi dati.</p></div>
+          <fieldset style="margin-top:18px">
+            <legend>Tipo di gara</legend>
+            <div class="field" data-f="gara">
+              <div class="races" role="radiogroup" aria-label="Tipo di gara">
+                <div class="race-opt">
+                  <input type="radio" name="gara" id="r-giro" value="giro" checked>
+                  <label for="r-giro"><b>Giro delle Coste</b><span>Percorso classico, 7 km</span><span>1 maggio 2027</span><em>12 €</em></label>
+                </div>
+                <div class="race-opt">
+                  <input type="radio" name="gara" id="r-trail" value="trail">
+                  <label for="r-trail"><b>Trail delle Coste</b><span>16 km</span><span>1 maggio 2027</span><em>12 €</em></label>
+                </div>
+                <div class="race-opt">
+                  <input type="radio" name="gara" id="r-kv" value="kv">
+                  <label for="r-kv"><b>Cadore Km Verticale</b><span>2,7 km</span><span>Fine agosto 2027</span><em>20 €</em></label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset style="margin-top:22px">
+            <legend>Atleta</legend>
+            <div class="grid2">
+              <div class="field" data-f="nome"><label for="nome">Nome</label><input type="text" id="nome" autocomplete="given-name"><span class="err-msg">Scrivi il nome.</span></div>
+              <div class="field" data-f="cognome"><label for="cognome">Cognome</label><input type="text" id="cognome" autocomplete="family-name"><span class="err-msg">Scrivi il cognome.</span></div>
+              <div class="field" data-f="nascita"><label for="nascita">Data di nascita</label><input type="date" id="nascita" autocomplete="bday" min="1930-01-01"><span class="err-msg">Inserisci la data di nascita.</span></div>
+              <div class="field" data-f="sesso"><span class="lbl" id="sesso-l">Sesso</span>
+                <div class="seg" role="radiogroup" aria-labelledby="sesso-l">
+                  <label><input type="radio" name="sesso" value="M"> M</label>
+                  <label><input type="radio" name="sesso" value="F"> F</label>
+                </div>
+                <span class="err-msg">Scegli M o F: serve per la classifica.</span></div>
+              <div class="field" data-f="societa"><label for="societa">Società<span class="hint">Scrivi "Libero" se non sei tesserato</span></label><input type="text" id="societa"><span class="err-msg">Scrivi la società, oppure "Libero".</span></div>
+              <div class="field" data-f="email"><label for="email">Email<span class="hint">Ti mandiamo la conferma e, se manca, il promemoria per il certificato</span></label><input type="email" id="email" autocomplete="email"><span class="err-msg">Scrivi un'email valida, per esempio nome@esempio.it.</span></div>
+            </div>
+            <div class="field hidden" data-f="consenso" id="minorBox" style="margin-top:14px">
+              <label class="check"><input type="checkbox" id="consenso"> Sono minorenne: per il Km Verticale serve il consenso di un genitore, che porterò firmato al ritiro del pettorale.</label>
+              <span class="err-msg">Per il Km Verticale i minorenni devono avere il consenso di un genitore.</span>
+            </div>
+          </fieldset>
+          <div class="step-nav" style="margin-top:22px">
+            <button class="btn btn-g" type="button" data-next>Avanti: certificato</button>
+          </div>
+        </div>
+
+        <!-- Passaggio 2 -->
+        <div data-step="1" class="hidden">
+          <div class="step-head"><h2>Certificato medico agonistico</h2><p>Serve per tutte e tre le gare. Lo controlla un responsabile della società.</p></div>
+          <fieldset style="margin-top:18px">
+            <legend>Quando lo mandi</legend>
+            <div class="field" data-f="certmode">
+              <div class="seg" role="radiogroup" aria-label="Certificato medico">
+                <label><input type="radio" name="certmode" value="ora" checked> Lo carico adesso</label>
+                <label><input type="radio" name="certmode" value="dopo"> Lo invio più tardi</label>
+              </div>
+            </div>
+            <div class="field" data-f="certfile" id="certNow" style="margin-top:16px">
+              <label for="certfile">Carica il certificato<span class="hint">Foto o PDF (jpg, png, pdf)</span></label>
+              <input type="file" id="certfile" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
+              <span class="err-msg">Carica il certificato, oppure scegli "Lo invio più tardi".</span>
+            </div>
+            <div class="later-note hidden" id="certLater">
+              <p>Puoi caricarlo fino al giorno prima della gara dal link che ti mandiamo per email. Senza certificato approvato non puoi ritirare il pettorale.</p>
+            </div>
+          </fieldset>
+          <div class="step-nav" style="margin-top:22px">
+            <button class="btn btn-o" type="button" data-prev>Indietro</button>
+            <button class="btn btn-g" type="button" data-next>Avanti: pagamento</button>
+          </div>
+        </div>
+
+        <!-- Passaggio 3 -->
+        <div data-step="2" class="hidden">
+          <div class="step-head"><h2>Pagamento</h2><p>Scegli come paghi. Chi sceglie il bonifico lo controlliamo noi sul conto della società.</p></div>
+          <fieldset style="margin-top:18px">
+            <legend>Come paghi</legend>
+            <div class="field" data-f="pag">
+              <div class="seg" role="radiogroup" aria-label="Come paghi">
+                <label><input type="radio" name="pag" value="online" checked> Online adesso</label>
+                <label><input type="radio" name="pag" value="bonifico"> Bonifico</label>
+                <label><input type="radio" name="pag" value="contanti"> Contanti al ritiro</label>
+              </div>
+            </div>
+            <div class="pay-box" id="payOnline"><p>Paghi con carta o PayPal. Sul sito vero alla conferma si apre il pagamento sicuro di Wix; in questa demo il pagamento è simulato.</p></div>
+            <div class="pay-box hidden" id="payBank">
+              <p>Intestato a: <b>A.S.D. Gruppo Marciatori Calalzo</b></p>
+              <p>IBAN: <code>IT64 E058 5661 0800 2757 1235 948</code></p>
+              <p>Importo: <b id="bankAmount">12 €</b></p>
+              <p>Causale: <code id="causale">Iscrizione Giro delle Coste 2027 – Cognome Nome</code></p>
+              <p style="margin-top:8px;color:var(--muted)">Non serve mandare la ricevuta: controlliamo noi l'accredito sul conto della società.</p>
+            </div>
+            <div class="pay-box hidden" id="payCash"><p>Paghi in contanti quando ritiri il pettorale (<span id="cashWhere">ufficio gara in piazza a Calalzo</span>).</p></div>
+          </fieldset>
+          <fieldset style="margin-top:22px">
+            <legend>Dichiarazioni</legend>
+            <div class="field" data-f="reg"><label class="check"><input type="checkbox" id="c-reg"> Ho letto e accetto il regolamento della gara, e sollevo gli organizzatori da responsabilità per danni a persone o cose causati da me o subiti durante la gara.</label><span class="err-msg">Devi accettare il regolamento e l'esonero di responsabilità.</span></div>
+            <div class="field" data-f="priv"><label class="check"><input type="checkbox" id="c-priv"> Acconsento al trattamento dei dati personali per gestire l'iscrizione e la classifica.</label><span class="err-msg">Serve il consenso al trattamento dei dati.</span></div>
+          </fieldset>
+          <div class="step-nav" style="margin-top:22px">
+            <button class="btn btn-o" type="button" data-prev>Indietro</button>
+            <button class="btn btn-g" type="submit" id="submitBtn">Conferma e paga 12 €</button>
+            <p>Modulo dimostrativo: nessun dato viene inviato.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="bib-wrap hidden" id="done" tabindex="-1">
+      <h2>Iscrizione ricevuta</h2>
+      <div class="bib" aria-label="Riepilogo iscrizione">
+        <div class="bib-in">
+          <span class="hole h1"></span><span class="hole h2"></span><span class="hole h3"></span><span class="hole h4"></span>
+          <p class="race" id="b-gara">Giro delle Coste 2027</p>
+          <p class="numero">N. —</p>
+          <p class="numnote">Il numero di pettorale ti viene assegnato al ritiro.</p>
+          <p class="who" id="b-nome">Nome Cognome</p>
+          <p class="club" id="b-soc">Società</p>
+          <dl>
+            <div><dt>Certificato</dt><dd><span class="st" id="b-cert">Da inviare</span></dd></div>
+            <div><dt>Pagamento</dt><dd><span class="st" id="b-pag">Pagato online</span></dd></div>
+            <div><dt>Quota</dt><dd id="b-quota">12 €</dd></div>
+            <div><dt>Data</dt><dd id="b-data">1 maggio 2027</dd></div>
+            <div style="grid-column:1/-1"><dt>Ritiro pettorale</dt><dd id="b-ritiro">Ufficio gara in piazza</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="demo-note"><b>Questa è una demo.</b> Nessun dato è stato inviato o salvato. Sul sito vero ti arriverebbe anche l'email di conferma<span id="b-mailnote"></span>.</p>
+      <button class="btn btn-o" type="button" id="again">Fai un'altra iscrizione</button>
+    </div>
+
+    <div class="cert-later" id="certificato">
+      <h2>Devi solo mandare il certificato?</h2>
+      <p>Se ti sei già iscritto e hai scelto di mandarlo più tardi, caricalo qui.</p>
+      <form id="certForm" novalidate>
+        <div class="grid2">
+          <div class="field" data-f="c2email"><label for="c2email">Email usata per l'iscrizione</label><input type="email" id="c2email" autocomplete="email"><span class="err-msg">Scrivi l'email con cui ti sei iscritto.</span></div>
+          <div class="field" data-f="c2gara"><label for="c2gara">Tipo di gara</label>
+            <select id="c2gara">
+              <option value="">Scegli la gara</option>
+              <option value="giro">Giro delle Coste – percorso classico, 7 km</option>
+              <option value="trail">Trail delle Coste – 16 km</option>
+              <option value="kv">Cadore Km Verticale – 2,7 km</option>
+            </select><span class="err-msg">Scegli la gara a cui sei iscritto.</span></div>
+        </div>
+        <div class="field" data-f="c2file"><label for="c2file">Certificato medico agonistico<span class="hint">Foto o PDF</span></label><input type="file" id="c2file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"><span class="err-msg">Carica il file del certificato.</span></div>
+        <div class="step-nav"><button class="btn btn-o" type="submit">Invia il certificato</button><p style="flex:1 1 200px">Demo: nessun file viene inviato.</p></div>
+      </form>
+      <div class="cert-ok hidden" id="certOk" tabindex="-1" role="status">
+        <p><b>Certificato ricevuto, lo controlliamo.</b></p>
+        <p>Ti scriviamo quando è approvato. Questa è una demo: nessun file è stato inviato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="lockup" role="img" aria-label="Logo Gruppo Marciatori Calalzo Atletica Cadore">
+        <svg aria-hidden="true"><use href="#mark"/></svg>
+        <div class="wm" aria-hidden="true"><span>Gruppo</span><span>Marciatori</span><strong>Calalzo</strong><small>Atletica Cadore</small></div>
+      </div>
+      <p class="note">Ridisegno provvisorio del logo, da sostituire con il file originale.</p>
+    </div>
+    <div>
+      <h2>Società</h2>
+      <p><b style="color:#fff">A.S.D. Gruppo Marciatori Calalzo – Atletica Cadore</b></p>
+      <p>Via Marmarole 1, 32042 Calalzo di Cadore (BL)</p>
+      <p>C.F. 92014000258, P.IVA 01138580251</p>
+    </div>
+    <div>
+      <h2>Pagine</h2>
+      <ul>
+        <li><a href="giro-delle-coste.html">Giro e Trail delle Coste</a></li>
+        <li><a href="km-verticale.html">Cadore Km Verticale</a></li>
+        <li><a href="iscrizione.html">Iscrizioni</a></li>
+        <li><a href="archivio.html">Archivio gare</a></li>
+        <li><a href="giovani.html">Attività giovanili</a></li>
+        <li><a href="club.html">Il club e i documenti</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contatti</h2>
+      <p><a href="mailto:info.gruppomarciatori@gmail.com">info.gruppomarciatori@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/profile.php?id=100063871909524" rel="noopener">Facebook</a></p>
+      <p><a href="../index.html">Torna al confronto delle bozze</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

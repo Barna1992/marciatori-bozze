@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gruppo Marciatori Calalzo – Bozza 3 "Divisa"</title>
+<meta name="description" content="Gruppo Marciatori Calalzo – Atletica Cadore. Corsa in montagna in Centro Cadore dal 1973: Giro e Trail delle Coste, Cadore Km Verticale, iscrizioni online, archivio gare.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --divisa:#A9DC6E;         /* verde chiaro delle divise: colore dominante. Da verificare con la divisa 2026 */
+  --divisa-2:#D3EDB4;       /* tinta più chiara della divisa, per sezioni secondarie */
+  --verde:#1F8A4C;          /* verde stemma, dal logo */
+  --verde-testo:#176B3A;    /* verde stemma scurito: bottoni e link (contrasto AA con il bianco) */
+  --bosco:#0E3B24;          /* testi e fasce scure */
+  --rosso:#C4283C;          /* rosso pista: solo dettagli ed errori */
+  --nebbia:#F1F5F0;
+  --ink:#0E3B24;
+  --muted:#3D5A47;
+  --line:#CFE0CB;
+  --pad:clamp(16px,5vw,56px);
+  --max:1200px;
+  --head:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--head) + 8px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+@media (min-width:900px){body{padding-bottom:0}}
+img{max-width:100%;display:block}
+a{color:var(--verde-testo)}
+:focus-visible{outline:3px solid var(--rosso);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hidden{display:none!important}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3,.wide{font-family:"Archivo",system-ui,sans-serif;font-stretch:118%;font-weight:800;line-height:1.02;letter-spacing:-.005em;margin:0}
+h2{font-size:clamp(2rem,6vw,3.3rem)}
+h3{font-size:1.2rem;font-stretch:112%;line-height:1.15}
+p{margin:0 0 1em}
+.num{font-variant-numeric:tabular-nums}
+.lead{font-size:1.1rem;max-width:58ch}
+section{padding:72px 0}
+@media (min-width:900px){section{padding:104px 0}}
+.sec-head{margin-bottom:36px;max-width:64ch}
+.sec-head p{margin:16px 0 0;font-size:1.08rem;color:var(--muted)}
+
+/* Bottoni */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:999px;font:inherit;font-weight:800;font-size:1.05rem;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.2;text-align:center}
+.btn-g{background:var(--verde-testo);color:#fff}
+.btn-g:hover{background:var(--bosco)}
+.btn-d{background:var(--bosco);color:var(--divisa)}
+.btn-d:hover{background:#082A19}
+.btn-l{background:var(--divisa);color:var(--bosco)}
+.btn-l:hover{background:#BFE88E}
+.btn-o{background:transparent;color:var(--bosco);border-color:var(--bosco)}
+.btn-o:hover{background:var(--bosco);color:#fff}
+.btn-ow{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-ow:hover{background:#fff;color:var(--bosco)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Banner bozza */
+.draft{background:var(--bosco);color:#E3F1E6;font-size:.88rem;line-height:1.4;padding:8px var(--pad);text-align:center}
+.draft a{color:var(--divisa);font-weight:700}
+
+/* Header */
+.head{position:sticky;top:0;z-index:50;background:var(--divisa);border-bottom:2px solid var(--bosco)}
+.head .wrap{display:flex;align-items:center;gap:16px;height:var(--head)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--bosco);min-height:44px;margin-right:auto}
+.brand svg{width:42px;height:42px;flex:none;background:#fff;border-radius:50%;padding:2px}
+.brand b{display:block;font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:850;font-size:.98rem;line-height:1.1}
+.brand span{display:block;font-size:.78rem;font-weight:700;line-height:1.2}
+.nav{display:none}
+.menu-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border-radius:999px;border:2px solid var(--bosco);background:transparent;color:var(--bosco);font:inherit;font-weight:800;cursor:pointer}
+.menu-btn svg{width:18px;height:18px}
+.head .btn{display:none}
+@media (min-width:1020px){
+  .menu-btn{display:none}
+  .nav{display:flex;align-items:center;gap:22px}
+  .head .btn{display:inline-flex;min-height:44px;padding:8px 20px;font-size:.98rem}
+}
+.nav > a,.nav summary{color:var(--bosco);text-decoration:none;font-weight:800;padding:8px 0;border-bottom:3px solid transparent;cursor:pointer}
+.nav > a:hover,.nav summary:hover{border-bottom-color:var(--bosco)}
+.nav details{position:relative;border:0;background:none;margin:0;border-radius:0}
+.nav summary{list-style:none;display:inline-flex;align-items:center;gap:6px;min-height:0;padding:8px 0}
+.nav summary::-webkit-details-marker{display:none}
+.nav summary svg{width:12px;height:12px;transition:transform .2s}
+.nav details[open] summary svg{transform:rotate(180deg)}
+.dd-menu{position:absolute;top:calc(100% + 10px);left:-16px;min-width:290px;background:#fff;border:2px solid var(--bosco);border-radius:16px;padding:8px;box-shadow:0 18px 30px -18px rgba(14,59,36,.5)}
+.dd-menu a{display:block;padding:12px 14px;border-radius:10px;color:var(--bosco);text-decoration:none;font-weight:800;line-height:1.3}
+.dd-menu a span{display:block;font-weight:600;font-size:.85rem;color:var(--muted)}
+.dd-menu a:hover{background:var(--divisa-2)}
+
+/* Menu mobile: pannello che scende sotto la barra */
+.drop{position:fixed;left:0;right:0;top:0;z-index:45;background:var(--bosco);color:#fff;padding:calc(var(--head) + 54px) var(--pad) 28px;transform:translateY(-102%);transition:transform .28s ease;max-height:100vh;overflow:auto}
+.drop.open{transform:none}
+.drop[aria-hidden=true]{visibility:hidden}
+.drop.open{visibility:visible}
+@media (prefers-reduced-motion:reduce){.drop{transition:none}}
+.drop nav{display:grid;gap:2px}
+.drop nav a{display:flex;align-items:center;min-height:52px;color:#fff;text-decoration:none;font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.3rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.drop nav a.sub{font-size:1.05rem;padding-left:16px;font-family:"Manrope",sans-serif;font-weight:700;color:var(--divisa)}
+@media (min-width:1020px){.drop{display:none}}
+
+/* Barra a schede in basso (solo telefono) */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:48;background:#fff;border-top:2px solid var(--bosco);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+.tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;color:var(--muted);text-decoration:none;font-size:.74rem;font-weight:800;border-radius:12px}
+.tabbar svg{width:24px;height:24px}
+.tabbar a.on{color:var(--bosco);background:var(--divisa-2)}
+.tabbar a.main{color:var(--bosco)}
+.tabbar a.main span.dot{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--verde-testo);color:#fff;margin-top:-22px;border:3px solid #fff;box-shadow:0 4px 10px rgba(14,59,36,.3)}
+.tabbar a.main svg{width:22px;height:22px}
+.tabbar a.main.on{background:transparent}
+@media (min-width:900px){.tabbar{display:none}}
+
+/* ---------- Pettorale (componente usato in apertura e nella conferma) ---------- */
+.bib{position:relative;background:#fff;color:var(--bosco);border-radius:22px;padding:30px 24px 0;box-shadow:0 22px 44px -22px rgba(14,59,36,.55);overflow:hidden;max-width:470px;width:100%}
+.bib::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--verde);border-bottom:3px solid var(--rosso)}
+.bib .hole{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--hole,var(--divisa));box-shadow:inset 0 2px 3px rgba(14,59,36,.35)}
+.bib .h1{top:24px;left:16px}.bib .h2{top:24px;right:16px}.bib .h3{bottom:84px;left:16px}.bib .h4{bottom:84px;right:16px}
+.bib-top{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:.86rem;margin-bottom:14px;text-align:center}
+.bib-top svg{width:30px;height:30px;flex:none}
+.bib .race{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.25rem;text-align:center;margin:0 0 4px;line-height:1.15}
+.bib .big{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(4.2rem,19vw,7rem);line-height:.86;text-align:center;margin:8px 0 2px;letter-spacing:-.02em}
+.bib .year{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:800;font-size:1.6rem;text-align:center;margin:0}
+.bib .where{text-align:center;font-weight:700;margin:10px 0 0}
+.bib .tbc{text-align:center;font-size:.85rem;color:var(--muted);margin:2px 0 18px}
+.bib-band{display:flex;justify-content:space-around;gap:8px;margin:0 -24px;padding:16px 24px;background:var(--bosco);color:#fff;min-height:68px;align-items:center}
+.bib-band div{text-align:center;line-height:1.15}
+.bib-band b{display:block;font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.25rem;color:var(--divisa)}
+.bib-band span{font-size:.8rem;font-weight:700}
+
+/* ---------- Apertura ---------- */
+.hero{background:var(--divisa);padding:40px 0 64px;overflow:hidden}
+.hero .wrap{display:grid;gap:26px;align-items:center;grid-template-areas:"title" "bib" "text"}
+.hero h1{grid-area:title}
+.hero .bib-col{grid-area:bib}
+.hero .hero-text{grid-area:text}
+.hero h1{font-size:clamp(2.5rem,9.5vw,5rem);font-stretch:125%;font-weight:900;line-height:.95;max-width:12ch}
+.hero .lead{margin:0 0 26px;color:var(--bosco)}
+@media (min-width:900px){.hero .lead{margin-top:24px}}
+.hero .bib-col{display:flex;justify-content:center}
+.hero .bib{transform:rotate(-2deg);max-width:min(470px,94%)}
+.hero .bib .cta{justify-content:center;margin:0 0 22px}
+.logo-note{font-size:.82rem;margin:18px 0 0;color:var(--muted)}
+@media (min-width:900px){
+  .hero{padding:72px 0 96px}
+  .hero .wrap{grid-template-columns:1.15fr .85fr;gap:0 56px;grid-template-areas:"title bib" "text bib";align-items:end}
+  .hero .hero-text{align-self:start}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero .bib{animation:pin .7s cubic-bezier(.2,.9,.3,1.2) both .1s}
+  @keyframes pin{from{transform:translateY(-28px) rotate(-7deg)}to{transform:rotate(-2deg)}}
+}
+
+/* ---------- Gare: indice ---------- */
+.races-index{display:grid;gap:14px}
+@media (min-width:760px){.races-index{grid-template-columns:1fr 1fr;gap:20px}}
+.race-link{display:grid;gap:4px;padding:24px;border-radius:18px;border:2px solid var(--bosco);text-decoration:none;color:var(--bosco);background:#fff}
+.race-link:hover{background:var(--divisa-2)}
+.race-link b{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.45rem;line-height:1.1}
+.race-link .stats{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-weight:800}
+.race-link .stats span{font-family:"Archivo",sans-serif;font-stretch:118%;font-size:1.6rem}
+.race-link .stats small{font-family:"Manrope",sans-serif;font-size:.85rem;font-weight:700;margin-left:2px}
+
+/* Foto in testa alla gara */
+.race-photo{position:relative;margin:0 0 36px;border-radius:22px;overflow:hidden;background:var(--bosco)}
+.race-photo img{width:100%;height:clamp(200px,38vw,420px);object-fit:cover;object-position:center 40%}
+.race-photo figcaption{position:absolute;right:10px;bottom:8px;font-size:.8rem;color:#fff;background:rgba(14,59,36,.75);padding:3px 8px;border-radius:6px;max-width:calc(100% - 20px)}
+.race-photo figcaption a{color:#fff}
+
+/* Schede */
+.tabs{display:flex;gap:6px;padding:5px;border-radius:999px;background:var(--nebbia);border:2px solid var(--bosco);width:fit-content;max-width:100%;margin-bottom:32px}
+.tab{min-height:46px;padding:8px clamp(12px,3.5vw,20px);border:0;border-radius:999px;background:transparent;font:inherit;font-weight:800;color:var(--bosco);cursor:pointer;white-space:nowrap}
+.tab[aria-selected=true]{background:var(--bosco);color:var(--divisa)}
+.kv .tabs{background:transparent;border-color:var(--divisa)}
+.kv .tab{color:#fff}
+.kv .tab[aria-selected=true]{background:var(--divisa);color:var(--bosco)}
+
+.ed{display:grid;gap:32px}
+@media (min-width:900px){.ed{grid-template-columns:minmax(260px,.75fr) 1.25fr;gap:48px;align-items:start}}
+.flyer{margin:0;display:grid;gap:12px;justify-items:start}
+.flyer img{border-radius:14px;border:2px solid var(--bosco);width:100%;max-width:360px}
+.flyer figcaption{font-size:.88rem;color:var(--muted)}
+.kv .flyer figcaption{color:#CFE5D5}
+.flyer-ph{width:100%;max-width:360px;aspect-ratio:3/4;border-radius:14px;border:2px dashed var(--divisa);display:grid;place-content:center;justify-items:center;text-align:center;padding:24px;gap:8px}
+.flyer-ph svg{width:72px;height:72px;background:#fff;border-radius:50%;padding:4px}
+.flyer-ph p{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.3rem;margin:6px 0 0}
+.flyer-ph span{font-size:.9rem;color:#CFE5D5}
+
+.dist{display:grid;gap:14px}
+@media (min-width:600px){.dist{grid-template-columns:1fr 1fr}}
+.dist article{padding:22px;border-radius:18px;background:var(--divisa)}
+.dist article:nth-child(2){background:var(--bosco);color:#fff}
+.dist .km{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;font-size:3.4rem;line-height:1;margin:10px 0 2px}
+.dist .km small{font-size:1rem;font-weight:800;margin-left:4px}
+.dist .dplus{font-weight:800;margin:0 0 10px}
+.dist p:last-child{margin:0}
+.facts{list-style:none;margin:24px 0 0;padding:0;display:grid;border-top:2px solid var(--bosco)}
+.facts li{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+@media (min-width:600px){.facts li{grid-template-columns:170px 1fr;gap:16px}}
+.facts b{font-weight:800}
+
+.prog{margin-top:56px}
+.prog h3{font-size:1.5rem;margin-bottom:6px}
+.timeline{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:0}
+.timeline li{display:grid;grid-template-columns:76px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line);align-items:baseline}
+.timeline time{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.timeline small{display:block;color:var(--muted);font-size:.88rem}
+@media (min-width:900px){
+  .timeline{grid-template-columns:repeat(6,1fr);gap:0}
+  .timeline li{grid-template-columns:1fr;border-top:4px solid var(--divisa);padding:16px 14px 0 0;gap:6px}
+  .timeline li:nth-child(3){border-top-color:var(--verde)}
+}
+details{border-radius:14px;border:2px solid var(--bosco);margin-top:14px;background:#fff}
+details summary{cursor:pointer;padding:14px 18px;font-weight:800;min-height:48px;list-style-position:inside}
+details ul{margin:0;padding:0 22px 16px 40px}
+details li{margin-bottom:6px}
+.kv details{background:transparent;border-color:rgba(169,220,110,.6)}
+.duo{display:grid;gap:18px;margin-top:40px;padding:26px;border-radius:22px;background:var(--divisa-2)}
+@media (min-width:800px){.duo{grid-template-columns:1fr 1fr;gap:36px}}
+.duo ul{margin:0;padding-left:20px}
+
+/* Km Verticale: sezione scura */
+.kv{background:var(--bosco);color:#fff}
+.kv .sec-head p{color:#CFE5D5}
+.kv a:not(.btn){color:var(--divisa)}
+.kv-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(169,220,110,.35);border:1px solid rgba(169,220,110,.35);border-radius:16px;overflow:hidden;margin:0 0 20px}
+@media (min-width:600px){.kv-stats{grid-template-columns:repeat(3,1fr)}}
+.kv-stats div{background:var(--bosco);padding:14px 16px}
+.kv-stats dt{font-size:.85rem;color:#CFE5D5;font-weight:700}
+.kv-stats dd{margin:2px 0 0;font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.45rem;color:var(--divisa)}
+.badge{display:inline-block;margin-top:22px}
+.badge img{height:34px;width:auto}
+
+/* ---------- Archivio ---------- */
+.archivio{background:var(--divisa)}
+.archivio .sec-head p{color:var(--bosco)}
+.segmented{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border-radius:999px;background:var(--bosco);max-width:520px;margin-bottom:24px}
+.segmented button{min-height:48px;border:0;border-radius:999px;background:transparent;color:#fff;font:inherit;font-weight:800;cursor:pointer;padding:6px 10px;line-height:1.15}
+.segmented button[aria-pressed=true]{background:var(--divisa);color:var(--bosco)}
+.arch-card{background:#fff;border-radius:22px;padding:24px;border:2px solid var(--bosco)}
+@media (min-width:900px){.arch-card{padding:34px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{min-height:44px;min-width:64px;padding:6px 16px;border-radius:999px;border:2px solid var(--bosco);background:#fff;color:var(--bosco);font:inherit;font-weight:800;font-family:"Archivo",sans-serif;font-stretch:112%;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--bosco);color:var(--divisa)}
+.kv .chip{background:transparent;color:#fff;border-color:var(--divisa)}
+.kv .chip[aria-pressed=true]{background:var(--divisa);color:var(--bosco)}
+.year h3{font-size:1.35rem;margin-bottom:14px}
+.year h3 small{display:block;font-family:"Manrope",sans-serif;font-size:.92rem;font-weight:700;color:var(--muted);margin-top:4px}
+.kv .year h3 small{color:#CFE5D5}
+.dls{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.dls a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border-radius:12px;background:var(--divisa-2);color:var(--bosco);text-decoration:none;font-weight:800;font-size:.95rem}
+.dls a:hover{background:var(--divisa)}
+.kv .dls a{background:rgba(169,220,110,.16);color:#fff}
+.dls svg,.dl svg{width:16px;height:16px;flex:none}
+.pgal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media (min-width:700px){.pgal{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1000px){.pgal{grid-template-columns:repeat(6,1fr)}}
+.pgal figure{position:relative;margin:0;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--nebbia)}
+.pgal img{width:100%;height:100%;object-fit:cover}
+.pgal .ph{width:100%;height:100%;display:grid;place-items:center;text-align:center;font-size:.8rem;font-weight:700;color:var(--muted);background:repeating-linear-gradient(135deg,var(--nebbia) 0 12px,#E6EEE4 12px 24px);padding:8px}
+.dl{position:absolute;right:6px;bottom:6px;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 10px;border-radius:999px;background:#fff;color:var(--bosco);text-decoration:none;font-weight:800;font-size:.82rem}
+.empty{color:var(--muted);margin:0}
+.kv .empty{color:#CFE5D5}
+.older{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.older h4{margin:0 0 8px;font-size:1rem}
+.older ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.older a{font-weight:800}
+.old-res{margin-top:24px;background:#fff;border-radius:22px;padding:24px;border:2px solid var(--bosco)}
+.old-res h3{margin-bottom:10px}
+.old-res ul{list-style:none;margin:0;padding:0}
+.old-res li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:12px 0;border-top:1px solid var(--line)}
+.old-res a{font-weight:800}
+
+/* ---------- Iscrizione a passaggi ---------- */
+.iscr{background:var(--nebbia)}
+.reg{display:grid;gap:24px;align-items:start}
+@media (min-width:1000px){.reg{grid-template-columns:1fr 330px;gap:36px}}
+.progress{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.progress li{font-size:.8rem;font-weight:800;color:var(--muted);line-height:1.2}
+.progress li::before{content:"";display:block;height:8px;border-radius:999px;background:#DCE7D9;margin-bottom:8px}
+.progress li.done::before{background:var(--verde)}
+.progress li[aria-current=step]{color:var(--bosco)}
+.progress li[aria-current=step]::before{background:var(--bosco)}
+.progress .n{display:block;font-family:"Archivo",sans-serif;font-stretch:118%;font-size:1rem}
+.formcard{background:#fff;border-radius:22px;padding:24px;border:2px solid var(--bosco)}
+@media (min-width:700px){.formcard{padding:34px}}
+.step h3{font-size:1.5rem;margin-bottom:6px}
+.step h3:focus{outline:none}
+.step .sub{color:var(--muted);margin-bottom:22px}
+.grid2{display:grid;gap:16px}
+@media (min-width:640px){.grid2{grid-template-columns:1fr 1fr;gap:16px 20px}}
+.field{display:grid;gap:6px;align-content:start;min-width:0}
+.field label,.lbl{font-weight:800}
+.hint{display:block;font-weight:600;font-size:.86rem;color:var(--muted)}
+input[type=text],input[type=email],input[type=date],select{width:100%;min-height:50px;padding:10px 14px;border-radius:12px;border:2px solid #9DB5A3;font:inherit;color:var(--ink);background:#fff}
+input[type=file]{font:inherit;font-size:.95rem;max-width:100%;width:100%;min-width:0}
+@media (max-width:359px){.tab{padding:8px 10px;font-size:.92rem}}
+input:focus,select:focus{border-color:var(--bosco);outline:3px solid var(--divisa);outline-offset:0}
+.err-msg{display:none;color:var(--rosso);font-weight:700;font-size:.9rem}
+.invalid .err-msg{display:block}
+.invalid input,.invalid select{border-color:var(--rosso)}
+.races{display:grid;gap:12px}
+@media (min-width:700px){.races{grid-template-columns:repeat(3,1fr)}}
+.race-opt{position:relative}
+.race-opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.race-opt label{display:grid;gap:2px;height:100%;padding:18px;border-radius:16px;border:2px solid #9DB5A3;cursor:pointer;background:#fff}
+.race-opt label b{font-family:"Archivo",sans-serif;font-stretch:112%;font-weight:800;font-size:1.1rem;line-height:1.15}
+.race-opt label span{font-size:.9rem;color:var(--muted);font-weight:600}
+.race-opt label em{font-style:normal;font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:900;font-size:1.6rem;margin-top:8px}
+.race-opt input:checked + label{border-color:var(--bosco);background:var(--divisa);box-shadow:inset 0 0 0 2px var(--bosco)}
+.race-opt input:checked + label span{color:var(--bosco)}
+.race-opt input:focus-visible + label{outline:3px solid var(--rosso);outline-offset:3px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:8px 16px;border-radius:999px;border:2px solid #9DB5A3;font-weight:700;cursor:pointer;background:#fff}
+.seg label:has(input:checked){border-color:var(--bosco);background:var(--divisa)}
+.seg input{accent-color:var(--bosco);width:18px;height:18px;margin:0}
+.check{display:flex!important;gap:12px;align-items:flex-start;font-weight:600!important;cursor:pointer}
+.check input{accent-color:var(--bosco);width:22px;height:22px;flex:none;margin:2px 0 0}
+.box{margin-top:16px;padding:16px 18px;border-radius:14px;background:var(--divisa-2)}
+.box p{margin:0 0 6px}.box p:last-child{margin:0}
+.box code{font-family:inherit;font-weight:800;word-break:break-word}
+.errors{display:none;border:2px solid var(--rosso);border-radius:14px;padding:14px 18px;margin-bottom:22px;background:#FDF1F2}
+.errors.show{display:block}
+.errors p{margin:0 0 6px;font-weight:800;color:var(--rosso)}
+.errors ul{margin:0;padding-left:20px}
+.errors a{color:var(--rosso);font-weight:700}
+.step-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.step-nav .next-btn{margin-left:auto}
+.step-nav p{margin:0;font-size:.86rem;color:var(--muted);flex-basis:100%}
+.summary{background:var(--bosco);color:#fff;border-radius:22px;padding:24px}
+@media (min-width:1000px){.summary{position:sticky;top:calc(var(--head) + 20px)}}
+.summary h3{font-size:1.2rem;color:var(--divisa);margin-bottom:12px}
+.summary dl{margin:0;display:grid;gap:10px}
+.summary dt{font-size:.82rem;color:#CFE5D5;font-weight:700}
+.summary dd{margin:0;font-weight:800}
+.summary .price{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;font-size:2.4rem;color:var(--divisa);line-height:1}
+.summary .small{font-size:.86rem;color:#CFE5D5;margin:14px 0 0}
+.st{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:800;font-size:.86rem;line-height:1.35}
+.st-ok{background:var(--divisa);color:var(--bosco)}
+.st-wait{background:#FFE7A6;color:#5A3D00}
+
+/* Conferma */
+.done{display:grid;gap:20px;justify-items:center;text-align:center}
+.done:focus{outline:none}
+.done h3{font-size:1.8rem}
+.done .bib{--hole:var(--nebbia);text-align:left}
+.done .bib .numero{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;font-size:3.6rem;text-align:center;line-height:1;margin:6px 0 0}
+.done .bib .numnote{text-align:center;font-size:.85rem;color:var(--muted);margin:4px 0 14px}
+.done .bib .who{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.4rem;text-align:center;margin:0}
+.done .bib .club{text-align:center;font-weight:700;color:var(--muted);margin:2px 0 16px}
+.done .bib dl{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin:0 0 22px;padding:16px 4px 0;border-top:2px dashed var(--line)}
+.done .bib dt{font-size:.8rem;font-weight:700;color:var(--muted)}
+.done .bib dd{margin:2px 0 0;font-weight:800}
+.done .bib .h3,.done .bib .h4{bottom:18px}
+.demo-note{max-width:52ch;margin:0;font-size:.95rem}
+.cert-later{margin-top:32px;padding:24px;border-radius:22px;border:2px dashed #9DB5A3;background:#fff}
+.cert-later > p{font-weight:800;margin-bottom:16px}
+.cert-later .step-nav{border-top:0;padding-top:0;margin-top:18px}
+.cert-ok{padding:16px 18px;border-radius:14px;background:var(--divisa-2)}
+.cert-ok p{margin:0 0 4px}
+
+/* ---------- Giovani ---------- */
+.yg{display:grid;gap:16px}
+@media (min-width:800px){.yg{grid-template-columns:1fr 1fr;gap:20px}}
+.course{padding:26px;border-radius:22px;background:var(--divisa-2)}
+.course h3{font-size:1.5rem}
+.course .age{font-weight:800;margin:6px 0 16px}
+.course dl{margin:0;display:grid;gap:0}
+.course dl div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:10px 0;border-top:1px solid rgba(14,59,36,.18)}
+.course dt{font-weight:800}
+.course dd{margin:0}
+.tbd{color:#8A1B2A;font-weight:700}
+.call{margin-top:20px;display:grid;gap:18px;padding:26px;border-radius:22px;background:var(--bosco);color:#fff;align-items:center}
+@media (min-width:860px){.call{grid-template-columns:1.2fr 1fr auto;padding:30px 36px}}
+.call h3{color:var(--divisa);font-size:1.5rem}
+.call .phone{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.7rem;margin:0}
+.call .phone small{display:block;font-family:"Manrope",sans-serif;font-size:.82rem;font-weight:700;color:#FFB3BD}
+.call a:not(.btn){color:var(--divisa)}
+
+/* ---------- Club ---------- */
+.club-sec{background:var(--divisa-2)}
+.club{display:grid;gap:36px}
+@media (min-width:960px){.club{grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}}
+.club-text p{max-width:62ch}
+.milestones{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:10px}
+@media (min-width:640px){.milestones{grid-template-columns:repeat(3,1fr)}}
+.milestones li{padding:16px;border-radius:16px;background:#fff;border:2px solid var(--bosco);font-weight:700;line-height:1.35}
+.milestones b{display:block;font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;font-size:2rem;color:var(--verde-testo);line-height:1;margin-bottom:6px}
+.club-photo img{border-radius:22px;border:2px solid var(--bosco);transform:rotate(1.5deg)}
+.club-photo figcaption{font-size:.88rem;color:var(--muted);margin-top:12px}
+.board{margin-top:48px}
+.board h3{font-size:1.5rem;margin-bottom:16px}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:600px){.people{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.people{grid-template-columns:repeat(4,1fr)}}
+.people li{padding:14px 16px;border-radius:14px;background:#fff}
+.people b{display:block}
+.people span{font-size:.9rem;color:var(--muted);font-weight:600}
+
+/* Documenti, sponsor, contatti */
+.docs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+@media (min-width:800px){.docs{grid-template-columns:repeat(3,1fr)}}
+.docs a{display:grid;gap:4px;min-height:64px;padding:18px 20px;border-radius:16px;background:var(--nebbia);border:2px solid transparent;text-decoration:none;color:var(--bosco);font-weight:800}
+.docs a span{font-weight:600;color:var(--muted);font-size:.9rem}
+.docs a:hover{border-color:var(--bosco)}
+.safe{margin-top:20px;padding:18px 20px;border-left:5px solid var(--rosso);background:#FDF5F6;border-radius:0 14px 14px 0}
+.safe p{margin:0 0 4px}
+.safe a{word-break:break-word}
+.sponsor-sec{background:var(--nebbia)}
+.sponsors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:800px){.sponsors{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.sponsors div{background:#fff;border-radius:14px;padding:16px;display:grid;place-items:center;min-height:100px}
+.sponsors img{max-height:64px;max-width:100%;width:auto;object-fit:contain}
+.partners{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.partners a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid var(--bosco);color:var(--bosco);text-decoration:none;font-weight:700;background:#fff}
+.partners a:hover{background:var(--divisa)}
+.contatti{background:var(--divisa)}
+.contact{display:grid;gap:24px}
+@media (min-width:800px){.contact{grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}}
+.contact-card{background:#fff;border-radius:22px;padding:26px;border:2px solid var(--bosco)}
+.contact-card .big{font-family:"Archivo",sans-serif;font-stretch:118%;font-weight:800;font-size:1.6rem;margin-bottom:10px}
+.contact-card a{word-break:break-word;font-weight:800}
+
+/* Footer */
+.foot{background:var(--bosco);color:#CFE5D5;padding:56px 0 40px;font-size:.95rem}
+.foot a{color:var(--divisa)}
+.foot-grid{display:grid;gap:28px}
+@media (min-width:900px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}}
+.lockup{display:flex;align-items:center;gap:12px;color:#fff}
+.lockup svg{width:64px;height:64px;background:#fff;border-radius:50%;padding:3px;flex:none}
+.wm span,.wm strong,.wm small{display:block;font-family:"Archivo",sans-serif;font-stretch:125%;line-height:1.05;text-transform:uppercase}
+.wm span{font-weight:800;font-size:.85rem}
+.wm strong{font-weight:900;font-size:1.25rem}
+.wm small{font-weight:700;font-size:.66rem;letter-spacing:.18em;margin-top:3px}
+.foot .note{font-size:.82rem;margin-top:12px}
+.foot p{margin:0 0 8px}
+.credit{font-size:.8rem;margin-top:28px;opacity:.85}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Ridisegno provvisorio del marchio: anelli a "C" + torri + abete -->
+    <symbol id="mark" viewBox="0 0 100 100">
+      <path d="M86.2 21.7A46 46 0 1 0 86.2 78.3" fill="none" stroke="#1F8A4C" stroke-width="3.6"/>
+      <path d="M82.7 24.5A41.5 41.5 0 1 0 82.7 75.5" fill="none" stroke="#C4283C" stroke-width="3.2"/>
+      <path d="M79.2 27.2A37 37 0 1 0 79.2 72.8" fill="none" stroke="#1F8A4C" stroke-width="3"/>
+      <path d="M75.6 30A32.5 32.5 0 1 0 75.6 70" fill="none" stroke="#C4283C" stroke-width="2.4"/>
+      <g fill="#1F8A4C">
+        <path d="M30 72V44h1.5v-6h3v3h2v-3h3v3h2v-3h3v6H45v28z"/>
+        <path d="M55 72V44h1.5v-6h3v3h2v-3h3v3h2v-3h3v6H70v28z"/>
+        <path d="M50 26l-7 13h3.5L41 50h4.5L39 63h22l-6.5-13H59l-5.5-11H57z"/>
+      </g>
+      <rect x="48.6" y="63" width="2.8" height="9" fill="#C4283C"/>
+      <rect x="35.5" y="56" width="4" height="7" rx="2" fill="#fff"/>
+      <rect x="60.5" y="56" width="4" height="7" rx="2" fill="#fff"/>
+    </symbol>
+    <symbol id="i-dl" viewBox="0 0 16 16"><path d="M8 2v8m0 0l-3.5-3.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="draft">Bozza grafica 3 – Divisa. Proposta, non è il sito ufficiale. <a href="../index.html">Confronta le bozze</a></div>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Gruppo Marciatori Calalzo, torna all'inizio">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span><b>Marciatori Calalzo</b><span>Atletica Cadore</span></span>
+    </a>
+    <nav class="nav" aria-label="Menu principale">
+      <details class="dd" id="ddGare">
+        <summary>Gare <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+        <div class="dd-menu">
+          <a href="#giro">Giro e Trail delle Coste<span>1 maggio, Calalzo di Cadore</span></a>
+          <a href="#km-verticale">Cadore Km Verticale<span>Fine agosto, da Vallesella alla Croda</span></a>
+        </div>
+      </details>
+      <a href="#archivio">Archivio</a>
+      <a href="#giovani">Giovani</a>
+      <a href="#club">Il club</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="btn btn-d" href="#iscrizioni">Iscriviti a una gara</a>
+    <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="drop">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span id="menuLbl">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="drop" id="drop" aria-hidden="true">
+  <nav aria-label="Menu completo">
+    <a href="#top">Home</a>
+    <a href="#gare">Gare</a>
+    <a class="sub" href="#giro">Giro e Trail delle Coste</a>
+    <a class="sub" href="#km-verticale">Cadore Km Verticale</a>
+    <a href="#iscrizioni">Iscrizioni</a>
+    <a href="#archivio">Archivio gare</a>
+    <a href="#giovani">Attività giovanili</a>
+    <a href="#club">Il club</a>
+    <a href="#documenti">Documenti</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</div>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <h1 id="hero-title">Corsa in montagna in Centro Cadore, dal 1973</h1>
+    <div class="bib-col">
+      <article class="bib" aria-labelledby="bib-race">
+        <span class="hole h1" aria-hidden="true"></span><span class="hole h2" aria-hidden="true"></span><span class="hole h3" aria-hidden="true"></span><span class="hole h4" aria-hidden="true"></span>
+        <p class="bib-top"><svg aria-hidden="true"><use href="#mark"/></svg>Prossima gara</p>
+        <p class="race" id="bib-race">Giro e Trail delle Coste</p>
+        <p class="big num">1 MAG</p>
+        <p class="year num">2027</p>
+        <p class="where">Calalzo di Cadore, partenza in piazza</p>
+        <p class="tbc">Data da confermare</p>
+        <div class="cta">
+          <a class="btn btn-g" href="#iscrizioni" data-race="giro">Iscriviti</a>
+          <a class="btn btn-o" href="#giro">Programma</a>
+        </div>
+        <div class="bib-band">
+          <div><b class="num">7 km</b><span>Giro, 300 m D+</span></div>
+          <div><b class="num">16 km</b><span>Trail, 850 m D+</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="hero-text">
+      <p class="lead">Siamo il Gruppo Marciatori Calalzo – Atletica Cadore. Organizziamo il Giro e il Trail delle Coste e il Cadore Km Verticale, e alleniamo ragazze e ragazzi dai 7 ai 18 anni. Alle nostre gare ora ti iscrivi online.</p>
+      <div class="cta">
+        <a class="btn btn-g" href="#iscrizioni">Iscriviti a una gara</a>
+        <a class="btn btn-o" href="#gare">Vedi le gare</a>
+      </div>
+      <p class="logo-note">Il logo in questa bozza è un ridisegno provvisorio, da sostituire con il file originale.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gare" aria-labelledby="gare-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="gare-title">Le nostre gare</h2>
+      <p>Due appuntamenti all'anno. Per ognuno trovi il volantino, tutte le informazioni, l'iscrizione online e le edizioni passate.</p>
+    </div>
+    <div class="races-index">
+      <a class="race-link" href="#giro">
+        <b>Giro e Trail delle Coste</b>
+        <span>1 maggio 2027, Calalzo di Cadore (da confermare)</span>
+        <span class="stats"><span>7<small>km</small></span><span>16<small>km</small></span><span>55ª<small>edizione</small></span></span>
+      </a>
+      <a class="race-link" href="#km-verticale">
+        <b>Cadore Km Verticale</b>
+        <span>Fine agosto 2027, da Vallesella alla Croda (da confermare)</span>
+        <span class="stats"><span>2,7<small>km</small></span><span>1000<small>m D+</small></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="giro" aria-labelledby="giro-title" style="padding-top:0">
+  <div class="wrap">
+    <figure class="race-photo">
+      <img src="../assets/img/calalzo-panorama.jpg" alt="Calalzo di Cadore dall'alto, con il lago e gli Spalti di Toro sullo sfondo" loading="lazy">
+      <figcaption>Foto: Antonio De Lorenzo, <a href="https://commons.wikimedia.org/wiki/File:CalalzoCadorePanorama.JPG" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.5/" rel="noopener">CC BY 2.5</a>, ritagliata</figcaption>
+    </figure>
+    <div class="sec-head">
+      <h2 id="giro-title">Giro e Trail delle Coste</h2>
+      <p>Il 1° maggio a Calalzo di Cadore: due percorsi con partenza insieme dalla piazza, poi pranzo, musica e premiazioni.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Giro delle Coste">
+      <button class="tab" role="tab" id="t-giro-cur" aria-controls="p-giro-cur" aria-selected="true">Edizione 2027</button>
+      <button class="tab" role="tab" id="t-giro-past" aria-controls="p-giro-past" aria-selected="false" tabindex="-1">Edizioni passate</button>
+    </div>
+
+    <div role="tabpanel" id="p-giro-cur" aria-labelledby="t-giro-cur" tabindex="0">
+      <div class="ed">
+        <figure class="flyer">
+          <img src="../assets/img/locandina-2026.jpg" alt="Volantino del Giro e Trail delle Coste 2026: 1 maggio, Calalzo di Cadore, programma e sponsor" loading="lazy">
+          <figcaption>Volantino 2026. Il volantino 2027 sarà caricato qui.</figcaption>
+          <a class="btn btn-o" href="#">Scarica il volantino (PDF)</a>
+        </figure>
+        <div>
+          <p class="lead" style="margin-bottom:22px">55ª edizione del Giro, sabato 1 maggio 2027 (data da confermare). Il Trail segue il Giro fino a Rizzios, poi passa da Grea e Vallesella.</p>
+          <div class="dist">
+            <article>
+              <h3>Giro delle Coste</h3>
+              <p class="km num">7<small>km</small></p>
+              <p class="dplus">300 m di dislivello</p>
+              <p>Il percorso classico.</p>
+            </article>
+            <article>
+              <h3>Trail delle Coste</h3>
+              <p class="km num">16<small>km</small></p>
+              <p class="dplus">850 m di dislivello</p>
+              <p>Fino a Rizzios, poi Grea e Vallesella.</p>
+            </article>
+          </div>
+          <ul class="facts">
+            <li><b>Quota</b><span>12 € online, 15 € in piazza fino a un'ora prima della partenza</span></li>
+            <li><b>Iscrizioni online</b><span>Entro mercoledì 28 aprile</span></li>
+            <li><b>Requisiti</b><span>Certificato medico agonistico, almeno 14 anni</span></li>
+            <li><b>Incluso</b><span>Pacco gara e buono pasto</span></li>
+            <li><b>Premi</b><span>In natura ai primi 5 uomini e alle prime 5 donne</span></li>
+            <li><b>Percorso</b><span><a href="https://connect.garmin.com/modern/course/436679580" rel="noopener">Traccia su Garmin Connect</a></span></li>
+          </ul>
+          <div class="cta" style="margin-top:24px">
+            <a class="btn btn-g" href="#iscrizioni" data-race="giro">Iscriviti al Giro delle Coste</a>
+            <a class="btn btn-o" href="#iscrizioni" data-race="trail">Iscriviti al Trail</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog">
+        <h3>Programma della giornata</h3>
+        <p>Tutto in piazza a Calalzo di Cadore.</p>
+        <ol class="timeline">
+          <li><time>09:00</time><span>Chiusura iscrizioni e ritiro pettorali<small>Ufficio gara in piazza</small></span></li>
+          <li><time>09:45</time><span>Briefing tecnico</span></li>
+          <li><time>10:00</time><span>Partenza Giro e Trail</span></li>
+          <li><time>12:00</time><span>Stand gastronomico<small>Con musica dal vivo</small></span></li>
+          <li><time>14:00</time><span>Premiazioni</span></li>
+          <li><time>15:00</time><span>Duathlon bambini<small>Orario da confermare: la locandina 2026 diceva 15:30</small></span></li>
+        </ol>
+      </div>
+
+      <details>
+        <summary>Regolamento in breve</summary>
+        <ul>
+          <li>Gara aperta ai tesserati e ai non tesserati con certificato medico agonistico, dai 14 anni in su.</li>
+          <li>Il certificato va caricato con l'iscrizione o inviato dopo, entro il giorno prima della gara: senza certificato approvato non si ritira il pettorale.</li>
+          <li>Iscrizioni online entro mercoledì 28 aprile; la mattina della gara in piazza fino a un'ora prima della partenza, a 15 €.</li>
+          <li>Il regolamento completo è nei <a href="#documenti">documenti</a>.</li>
+        </ul>
+      </details>
+
+      <div class="duo">
+        <div>
+          <h3>Duathlon bambini</h3>
+          <p style="margin:10px 0 0">Il pomeriggio del Giro delle Coste, per chi ha meno di 14 anni: un tratto di corsa e uno in mountain bike, da soli o in coppia.</p>
+        </div>
+        <ul>
+          <li>Frazioni sotto il chilometro, senza cronometro.</li>
+          <li>Un premio per tutti.</li>
+          <li>Iscrizione sul posto dalle 14:30: non serve iscriversi online.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="p-giro-past" aria-labelledby="t-giro-past" tabindex="0" hidden>
+      <p class="sec-head" style="margin-bottom:20px">Classifiche e foto di ogni edizione: le foto si scaricano una per una o tutto l'album. Le trovi anche nell'<a href="#archivio">archivio gare</a>.</p>
+      <div data-years="giro"></div>
+    </div>
+  </div>
+</section>
+
+<section id="km-verticale" class="kv" aria-labelledby="kv-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="kv-title">Cadore Km Verticale</h2>
+      <p>Mille metri di salita in 2,7 km, da Vallesella alla Croda, con le Marmarole e gli Spalti di Toro davanti.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Cadore Km Verticale">
+      <button class="tab" role="tab" id="t-kv-cur" aria-controls="p-kv-cur" aria-selected="true">Edizione 2027</button>
+      <button class="tab" role="tab" id="t-kv-past" aria-controls="p-kv-past" aria-selected="false" tabindex="-1">Edizioni passate</button>
+    </div>
+
+    <div role="tabpanel" id="p-kv-cur" aria-labelledby="t-kv-cur" tabindex="0">
+      <div class="ed">
+        <figure class="flyer">
+          <div class="flyer-ph">
+            <svg aria-hidden="true"><use href="#mark"/></svg>
+            <p>Volantino 2027 in arrivo</p>
+            <span>Lo pubblichiamo qui appena è pronto.</span>
+          </div>
+          <figcaption>Fine agosto 2027, data da confermare.</figcaption>
+          <a class="btn btn-l" href="#">Scarica il volantino (PDF)</a>
+        </figure>
+        <div>
+          <dl class="kv-stats">
+            <div><dt>Partenza</dt><dd class="num">750 m</dd></div>
+            <div><dt>Arrivo</dt><dd class="num">1750 m</dd></div>
+            <div><dt>Lunghezza</dt><dd class="num">2,7 km</dd></div>
+            <div><dt>Tempo massimo</dt><dd class="num">3 ore</dd></div>
+            <div><dt>Quota online</dt><dd class="num">20 €</dd></div>
+            <div><dt>Il giorno della gara</dt><dd class="num">25 €</dd></div>
+          </dl>
+          <details open>
+            <summary>Cosa serve</summary>
+            <ul>
+              <li>Casco obbligatorio.</li>
+              <li>Antivento e maglia di ricambio.</li>
+              <li>Certificato medico agonistico, da caricare con l'iscrizione o da inviare dopo. Al ritiro del pettorale firmi l'autocertificazione di buona salute.</li>
+              <li>Maggiorenni; i minorenni con il consenso dei genitori.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Partenza, iscrizioni e servizi</summary>
+            <ul>
+              <li>Partenza vicino al Bar Henry a Vallesella, Domegge di Cadore.</li>
+              <li>Iscrizioni online fino al giovedì prima della gara, ore 24. Il giorno della gara fino alle 08:30 alla partenza.</li>
+              <li>La quota comprende ristoro, assistenza e gadget per i primi 100 iscritti.</li>
+              <li>Trasporto sacche all'arrivo. Non c'è trasporto per la discesa.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Dopo la gara</summary>
+            <ul>
+              <li>Ristoro e premiazioni in piazza a Grea.</li>
+              <li>Stand gastronomico, chiosco della birra e musica.</li>
+              <li>Voli in elicottero con Alpen Rotor.</li>
+            </ul>
+          </details>
+          <div class="cta" style="margin-top:24px">
+            <a class="btn btn-l" href="#iscrizioni" data-race="kv">Iscriviti al Km Verticale</a>
+          </div>
+          <div class="badge"><img src="../assets/img/sponsor/skyrunning-italia.png" alt="Skyrunning Italia"></div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="p-kv-past" aria-labelledby="t-kv-past" tabindex="0" hidden>
+      <p class="sec-head" style="margin-bottom:20px;color:#CFE5D5">Classifiche e foto di ogni edizione: le foto si scaricano una per una o tutto l'album. Le trovi anche nell'<a href="#archivio">archivio gare</a>.</p>
+      <div data-years="kv"></div>
+    </div>
+  </div>
+</section>
+
+<section id="archivio" class="archivio" aria-labelledby="arch-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="arch-title">Archivio gare</h2>
+      <p>Tutte le edizioni passate, anno per anno: classifiche in PDF e foto da scaricare. Scegli la gara e poi l'anno.</p>
+    </div>
+    <div class="segmented" role="group" aria-label="Scegli la gara">
+      <button type="button" data-arch="giro" aria-pressed="true">Giro delle Coste</button>
+      <button type="button" data-arch="kv" aria-pressed="false">Km Verticale</button>
+    </div>
+    <div class="arch-card">
+      <div id="archBox" aria-live="polite"></div>
+    </div>
+    <div class="old-res" id="risultati-storici">
+      <h3>Altri risultati storici</h3>
+      <ul>
+        <li><span>Sci alpinismo, stagione 2015-16</span><a href="#">Classifiche</a></li>
+        <li><span>Sci alpinismo, stagione 2014-15</span><a href="#">Classifiche</a></li>
+        <li><span>Sci alpinismo, stagione 2013-14</span><a href="#">Classifiche</a></li>
+        <li><span>Corsa campestre CSI 2015-16, 5 prove e finale provinciale</span><a href="#">Classifiche</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="iscrizioni" class="iscr" aria-labelledby="reg-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="reg-title">Iscriviti a una gara</h2>
+      <p>Quattro passaggi. Il certificato medico puoi caricarlo adesso o mandarlo più tardi, e scegli tu se pagare online, con bonifico o in contanti al ritiro del pettorale.</p>
+    </div>
+
+    <div class="reg" id="regArea">
+      <div>
+        <ol class="progress" id="progress">
+          <li aria-current="step"><span class="n">1</span>Gara</li>
+          <li><span class="n">2</span>Atleta</li>
+          <li><span class="n">3</span>Certificato</li>
+          <li><span class="n">4</span>Pagamento</li>
+        </ol>
+        <form class="formcard" id="regForm" novalidate>
+          <div class="errors" id="errors" role="alert" tabindex="-1">
+            <p>Controlla questi campi per andare avanti:</p>
+            <ul id="errList"></ul>
+          </div>
+
+          <div class="step" data-step="0">
+            <h3 tabindex="-1">A quale gara ti iscrivi?</h3>
+            <p class="sub">Passo 1 di 4</p>
+            <div class="field" data-f="gara">
+              <span class="lbl sr-only" id="gara-l">Tipo di gara</span>
+              <div class="races" role="radiogroup" aria-labelledby="gara-l">
+                <div class="race-opt">
+                  <input type="radio" name="gara" id="r-giro" value="giro" checked>
+                  <label for="r-giro"><b>Giro delle Coste</b><span>Percorso classico, 7 km</span><span>1 maggio 2027</span><em>12 €</em></label>
+                </div>
+                <div class="race-opt">
+                  <input type="radio" name="gara" id="r-trail" value="trail">
+                  <label for="r-trail"><b>Trail delle Coste</b><span>16 km</span><span>1 maggio 2027</span><em>12 €</em></label>
+                </div>
+                <div class="race-opt">
+                  <input type="radio" name="gara" id="r-kv" value="kv">
+                  <label for="r-kv"><b>Cadore Km Verticale</b><span>2,7 km</span><span>Fine agosto 2027</span><em>20 €</em></label>
+                </div>
+              </div>
+              <span class="err-msg">Scegli la gara.</span>
+            </div>
+          </div>
+
+          <div class="step hidden" data-step="1">
+            <h3 tabindex="-1">I tuoi dati</h3>
+            <p class="sub">Passo 2 di 4</p>
+            <div class="grid2">
+              <div class="field" data-f="nome"><label for="nome">Nome</label><input type="text" id="nome" autocomplete="given-name"><span class="err-msg">Scrivi il nome.</span></div>
+              <div class="field" data-f="cognome"><label for="cognome">Cognome</label><input type="text" id="cognome" autocomplete="family-name"><span class="err-msg">Scrivi il cognome.</span></div>
+              <div class="field" data-f="nascita"><label for="nascita">Data di nascita</label><input type="date" id="nascita" autocomplete="bday" min="1930-01-01"><span class="err-msg">Inserisci la data di nascita.</span></div>
+              <div class="field" data-f="sesso"><span class="lbl" id="sesso-l">Sesso</span>
+                <div class="seg" role="radiogroup" aria-labelledby="sesso-l">
+                  <label><input type="radio" name="sesso" value="M"> M</label>
+                  <label><input type="radio" name="sesso" value="F"> F</label>
+                </div>
+                <span class="err-msg">Scegli M o F: serve per la classifica.</span></div>
+              <div class="field" data-f="societa"><label for="societa">Società<span class="hint">Scrivi "Libero" se non sei tesserato</span></label><input type="text" id="societa"><span class="err-msg">Scrivi la società, oppure "Libero".</span></div>
+              <div class="field" data-f="email"><label for="email">Email<span class="hint">Ti mandiamo la conferma e, se manca, il promemoria per il certificato</span></label><input type="email" id="email" autocomplete="email"><span class="err-msg">Scrivi un'email valida, per esempio nome@esempio.it.</span></div>
+            </div>
+            <div class="field hidden" data-f="consenso" id="minorBox" style="margin-top:16px">
+              <label class="check"><input type="checkbox" id="consenso"> Sono minorenne: per il Km Verticale serve il consenso di un genitore, che porterò firmato al ritiro del pettorale.</label>
+              <span class="err-msg">Per il Km Verticale i minorenni devono avere il consenso di un genitore.</span>
+            </div>
+          </div>
+
+          <div class="step hidden" data-step="2">
+            <h3 tabindex="-1">Certificato medico agonistico</h3>
+            <p class="sub">Passo 3 di 4</p>
+            <div class="field" data-f="certmode">
+              <div class="seg" role="radiogroup" aria-label="Certificato medico">
+                <label><input type="radio" name="certmode" value="ora" checked> Lo carico adesso</label>
+                <label><input type="radio" name="certmode" value="dopo"> Lo invio più tardi</label>
+              </div>
+            </div>
+            <div class="field" data-f="certfile" id="certNow" style="margin-top:16px">
+              <label for="certfile">Carica il certificato<span class="hint">Foto o PDF (jpg, png, pdf). Lo controlla un responsabile della società.</span></label>
+              <input type="file" id="certfile" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">
+              <span class="err-msg">Carica il certificato, oppure scegli "Lo invio più tardi".</span>
+            </div>
+            <div class="box hidden" id="certLater">
+              <p>Puoi caricarlo fino al giorno prima della gara dal link che ti mandiamo per email. Senza certificato approvato non puoi ritirare il pettorale.</p>
+            </div>
+          </div>
+
+          <div class="step hidden" data-step="3">
+            <h3 tabindex="-1">Come paghi?</h3>
+            <p class="sub">Passo 4 di 4</p>
+            <div class="field" data-f="pag">
+              <div class="seg" role="radiogroup" aria-label="Come paghi">
+                <label><input type="radio" name="pag" value="online" checked> Online adesso</label>
+                <label><input type="radio" name="pag" value="bonifico"> Bonifico</label>
+                <label><input type="radio" name="pag" value="contanti"> Contanti al ritiro</label>
+              </div>
+            </div>
+            <div class="box" id="payOnline"><p>Paghi con carta o PayPal. Sul sito vero alla conferma si apre il pagamento sicuro di Wix; in questa demo il pagamento è simulato.</p></div>
+            <div class="box hidden" id="payBank">
+              <p>Intestato a: <b>A.S.D. Gruppo Marciatori Calalzo</b></p>
+              <p>IBAN: <code>IT64 E058 5661 0800 2757 1235 948</code></p>
+              <p>Importo: <b id="bankAmount">12 €</b></p>
+              <p>Causale: <code id="causale">Iscrizione Giro delle Coste 2027 – Cognome Nome</code></p>
+              <p style="margin-top:8px">Non serve mandare la ricevuta: controlliamo noi l'accredito sul conto della società.</p>
+            </div>
+            <div class="box hidden" id="payCash"><p>Paghi in contanti quando ritiri il pettorale (<span id="cashWhere">ufficio gara in piazza a Calalzo</span>).</p></div>
+            <div style="display:grid;gap:14px;margin-top:22px">
+              <div class="field" data-f="reg"><label class="check"><input type="checkbox" id="c-reg"> Ho letto e accetto il <a href="#documenti">regolamento della gara</a>, e sollevo gli organizzatori da responsabilità per danni a persone o cose causati da me o subiti durante la gara.</label><span class="err-msg">Devi accettare il regolamento e l'esonero di responsabilità.</span></div>
+              <div class="field" data-f="priv"><label class="check"><input type="checkbox" id="c-priv"> Acconsento al trattamento dei dati personali per gestire l'iscrizione e la classifica.</label><span class="err-msg">Serve il consenso al trattamento dei dati.</span></div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="btn btn-o hidden" type="button" id="backBtn">Indietro</button>
+            <button class="btn btn-g next-btn" type="submit" id="nextBtn">Avanti</button>
+            <p>Modulo dimostrativo: nessun dato viene inviato.</p>
+          </div>
+        </form>
+      </div>
+
+      <aside class="summary" aria-live="polite">
+        <h3>La tua iscrizione</h3>
+        <dl>
+          <div><dt>Gara</dt><dd id="s-gara">Giro delle Coste</dd></div>
+          <div><dt>Data</dt><dd id="s-data">Sabato 1 maggio 2027 (da confermare)</dd></div>
+          <div><dt>Iscrizioni online fino a</dt><dd id="s-dead">Mercoledì 28 aprile</dd></div>
+          <div><dt>Quota online</dt><dd class="price num" id="s-quota">12 €</dd></div>
+          <div><dt>Certificato</dt><dd><span class="st st-ok" id="s-cert">Lo carichi adesso</span></dd></div>
+          <div><dt>Pagamento</dt><dd><span class="st st-ok" id="s-pag">Online adesso</span></dd></div>
+        </dl>
+        <p class="small" id="s-day">In piazza la mattina della gara: 15 €</p>
+      </aside>
+    </div>
+
+    <div class="done hidden" id="done" tabindex="-1">
+      <h3>Iscrizione ricevuta</h3>
+      <article class="bib" aria-label="Il tuo pettorale: riepilogo dell'iscrizione">
+        <span class="hole h1" aria-hidden="true"></span><span class="hole h2" aria-hidden="true"></span><span class="hole h3" aria-hidden="true"></span><span class="hole h4" aria-hidden="true"></span>
+        <p class="bib-top"><svg aria-hidden="true"><use href="#mark"/></svg>Marciatori Calalzo</p>
+        <p class="race" id="b-gara">Giro delle Coste 2027</p>
+        <p class="numero">N. —</p>
+        <p class="numnote">Il numero di pettorale ti viene assegnato al ritiro.</p>
+        <p class="who" id="b-nome">Nome Cognome</p>
+        <p class="club" id="b-soc">Società</p>
+        <dl>
+          <div><dt>Certificato</dt><dd><span class="st" id="b-cert">Da inviare</span></dd></div>
+          <div><dt>Pagamento</dt><dd><span class="st" id="b-pag">Pagato online</span></dd></div>
+          <div><dt>Quota</dt><dd id="b-quota">12 €</dd></div>
+          <div><dt>Data</dt><dd id="b-data">1 maggio 2027</dd></div>
+          <div style="grid-column:1/-1"><dt>Ritiro pettorale</dt><dd id="b-ritiro">Ufficio gara in piazza</dd></div>
+        </dl>
+      </article>
+      <p class="demo-note"><b>Questa è una demo.</b> Nessun dato è stato inviato o salvato. Sul sito vero ti arriverebbe anche l'email di conferma<span id="b-mailnote"></span>.</p>
+      <button class="btn btn-o" type="button" id="again">Fai un'altra iscrizione</button>
+    </div>
+
+    <div class="cert-later" id="certUpload">
+      <p>Hai già un'iscrizione e devi solo mandare il certificato? Caricalo qui.</p>
+      <form id="certForm" novalidate>
+        <div class="grid2">
+          <div class="field" data-f="c2email"><label for="c2email">Email usata per l'iscrizione</label><input type="email" id="c2email" autocomplete="email"><span class="err-msg">Scrivi l'email con cui ti sei iscritto.</span></div>
+          <div class="field" data-f="c2gara"><label for="c2gara">Tipo di gara</label>
+            <select id="c2gara">
+              <option value="">Scegli la gara</option>
+              <option value="giro">Giro delle Coste – percorso classico, 7 km</option>
+              <option value="trail">Trail delle Coste – 16 km</option>
+              <option value="kv">Cadore Km Verticale – 2,7 km</option>
+            </select><span class="err-msg">Scegli la gara a cui sei iscritto.</span></div>
+        </div>
+        <div class="field" data-f="c2file" style="margin-top:16px"><label for="c2file">Certificato medico agonistico<span class="hint">Foto o PDF</span></label><input type="file" id="c2file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"><span class="err-msg">Carica il file del certificato.</span></div>
+        <div class="step-nav"><button class="btn btn-o" type="submit">Invia il certificato</button><p>Demo: nessun file viene inviato.</p></div>
+      </form>
+      <div class="cert-ok hidden" id="certOk" tabindex="-1" role="status">
+        <p><b>Certificato ricevuto, lo controlliamo.</b></p>
+        <p>Ti scriviamo quando è approvato. Questa è una demo: nessun file è stato inviato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="giovani" aria-labelledby="yg-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="yg-title">Attività giovanili</h2>
+      <p>Da aprile a novembre alcuni dei nostri migliori atleti allenano ragazze e ragazzi dai 7 ai 18 anni, in un ambiente sano e stimolante. Ci prepariamo insieme al Campionato Cadorino, al Provinciale e ad altre gare provinciali e regionali.</p>
+    </div>
+    <div class="yg">
+      <article class="course">
+        <h3>Giovanissimi</h3>
+        <p class="age">7–11 anni (fascia d'età da confermare)</p>
+        <dl>
+          <div><dt>Periodo</dt><dd>Da aprile a novembre</dd></div>
+          <div><dt>Giorni e orari</dt><dd class="tbd">Da inserire</dd></div>
+          <div><dt>Dove</dt><dd>Calalzo di Cadore <span class="tbd">(luogo da inserire)</span></dd></div>
+          <div><dt>Allenatori</dt><dd>Atleti del gruppo</dd></div>
+        </dl>
+      </article>
+      <article class="course">
+        <h3>Ragazzi e cadetti</h3>
+        <p class="age">12–18 anni (fascia d'età da confermare)</p>
+        <dl>
+          <div><dt>Periodo</dt><dd>Da aprile a novembre</dd></div>
+          <div><dt>Giorni e orari</dt><dd class="tbd">Da inserire</dd></div>
+          <div><dt>Dove</dt><dd>Calalzo di Cadore <span class="tbd">(luogo da inserire)</span></dd></div>
+          <div><dt>Gare</dt><dd>Campionato Cadorino e Provinciale</dd></div>
+        </dl>
+      </article>
+    </div>
+    <div class="call">
+      <div>
+        <h3>Chi chiamare</h3>
+        <p style="margin:6px 0 0">Per iscrivere tuo figlio o tua figlia, o solo per chiedere informazioni.</p>
+      </div>
+      <div>
+        <p style="margin:0;font-weight:700">Referente attività giovanili</p>
+        <p class="phone num">333 000 0000<small>Numero da inserire</small></p>
+        <p style="margin:6px 0 0"><a href="mailto:info.gruppomarciatori@gmail.com">info.gruppomarciatori@gmail.com</a></p>
+      </div>
+      <div><a class="btn btn-l" href="tel:">Chiama il referente</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="club" class="club-sec" aria-labelledby="club-title">
+  <div class="wrap">
+    <div class="club">
+      <div class="club-text">
+        <div class="sec-head" style="margin-bottom:24px"><h2 id="club-title">Il club</h2></div>
+        <p>Il Gruppo Marciatori Calalzo fu fondato nel 1973 da alcuni appassionati del podismo locale, capeggiati da Marte Gaggio. In breve tempo il Gruppo ottenne apprezzabili risultati in particolare nella corsa in montagna, dove occupa ancora oggi una posizione di eccellenza nel panorama provinciale e regionale.</p>
+        <p>Guidato dal presidente Marte Gaggio, nel 1980 a Firenze il sodalizio ha conquistato il titolo nazionale a squadre di corsa in montagna, e per tre volte il primo posto nella "24 ore di S. Martino", gara a squadre sulla pista di atletica di Belluno. Numerose le vittorie dei suoi atleti, individuali e di squadra, in staffette e gare a coppie.</p>
+        <p>Nel 2003 al nome storico si è aggiunto "Atletica Cadore": oggi siamo la società di riferimento per i podisti di tutto il Centro Cadore.</p>
+        <ol class="milestones">
+          <li><b>1973</b>Nasce il Gruppo Marciatori Calalzo</li>
+          <li><b>1980</b>Campioni italiani a squadre di corsa in montagna, a Firenze</li>
+          <li><b>2003</b>Il nome diventa Gruppo Marciatori Calalzo – Atletica Cadore</li>
+        </ol>
+      </div>
+      <figure class="club-photo" style="margin:0">
+        <img src="../assets/img/gruppo.jpg" alt="Una quindicina di atleti del club in divisa, in posa in una via di Calalzo" loading="lazy">
+        <figcaption>Atleti del club in paese.</figcaption>
+      </figure>
+    </div>
+    <div class="board">
+      <h3>Consiglio direttivo</h3>
+      <ul class="people">
+        <li><b>Mirko Da Vià</b><span>Presidente</span></li>
+        <li><b>Silvia Giacomelli</b><span>Vice presidente</span></li>
+        <li><b>Giovanni Vascellari</b><span>Consigliere</span></li>
+        <li><b>Luigi Cian</b><span>Consigliere</span></li>
+        <li><b>Giovanni De Bon</b><span>Consigliere</span></li>
+        <li><b>Manuel Da Col</b><span>Consigliere</span></li>
+        <li><b>Martina Festini Purlan</b><span>Psicologa</span></li>
+        <li><b>Sandra De Monte Pangon</b><span>Responsabile safeguarding</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="documenti" aria-labelledby="doc-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="doc-title">Documenti</h2></div>
+    <ul class="docs">
+      <li><a href="#">Codice di condotta<span>Modello di comportamento, art. 1–16</span></a></li>
+      <li><a href="#">Regolamento Km Verticale<span>Edizione 2025</span></a></li>
+      <li><a href="#">Regolamento Giro e Trail delle Coste<span>Edizione 2026</span></a></li>
+    </ul>
+    <div class="safe">
+      <p><b>Safeguarding.</b> Per segnalazioni sulla tutela di atleti e minori scrivi a Sandra De Monte Pangon, responsabile safeguarding:</p>
+      <p><a href="mailto:safeguarding1974gmcalalzo@gmail.com">safeguarding1974gmcalalzo@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sponsor-sec" aria-labelledby="sp-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="sp-title">Sponsor e partner</h2></div>
+    <div class="sponsors">
+      <div><img src="../assets/img/sponsor/errebi.jpg" alt="Errebi" loading="lazy"></div>
+      <div><img src="../assets/img/sponsor/volksbank.png" alt="Volksbank" loading="lazy"></div>
+      <div><img src="../assets/img/sponsor/dplus.png" alt="D+" loading="lazy"></div>
+      <div><img src="../assets/img/sponsor/de-carlo.png" alt="Stefano De Carlo" loading="lazy"></div>
+    </div>
+    <ul class="partners">
+      <li><a href="http://www.comune.calalzo.bl.it/" rel="noopener">Comune di Calalzo</a></li>
+      <li><a href="http://www.cadoredolomiti.it/" rel="noopener">Cadore Dolomiti</a></li>
+      <li><a href="https://www.regione.veneto.it/" rel="noopener">Regione Veneto</a></li>
+      <li><a href="http://www.dolomitirescuerace.it/" rel="noopener">Dolomiti Rescue Race</a></li>
+      <li><a href="http://www.grupporagni.it/" rel="noopener">Gruppo Ragni</a></li>
+      <li><a href="http://www.dolomititrail.it/" rel="noopener">Dolomiti Trail</a></li>
+      <li><a href="https://www.dynafit.com/" rel="noopener">Dynafit</a></li>
+      <li><a href="https://www.montura.it/" rel="noopener">Montura</a></li>
+      <li><a href="http://www.birremedie.it/" rel="noopener">Birre Medie</a></li>
+      <li><a href="https://www.facebook.com/iltrail.delelongane" rel="noopener">Trail delle Elongane</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contatti" class="contatti" aria-labelledby="ct-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="ct-title">Contatti</h2></div>
+    <div class="contact">
+      <div class="contact-card">
+        <p class="big">Scrivici</p>
+        <p><a href="mailto:info.gruppomarciatori@gmail.com">info.gruppomarciatori@gmail.com</a></p>
+        <p>Informazioni sulle gare: <a href="tel:+393338440061">333 844 0061</a></p>
+        <p style="margin:0"><a href="https://www.facebook.com/profile.php?id=100063871909524" rel="noopener">Pagina Facebook</a></p>
+      </div>
+      <div>
+        <p><b>Sede</b><br>Via Marmarole 1<br>32042 Calalzo di Cadore (BL)</p>
+        <p>Alla sede è disponibile anche una copia del codice di condotta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="lockup" role="img" aria-label="Logo Gruppo Marciatori Calalzo Atletica Cadore">
+          <svg aria-hidden="true"><use href="#mark"/></svg>
+          <div class="wm" aria-hidden="true"><span>Gruppo</span><span>Marciatori</span><strong>Calalzo</strong><small>Atletica Cadore</small></div>
+        </div>
+        <p class="note">Ridisegno provvisorio del logo, da sostituire con il file originale.</p>
+      </div>
+      <div>
+        <p><b style="color:#fff">A.S.D. Gruppo Marciatori Calalzo – Atletica Cadore</b></p>
+        <p>Via Marmarole 1, 32042 Calalzo di Cadore (BL)</p>
+        <p>C.F. 92014000258, P.IVA 01138580251</p>
+      </div>
+      <div>
+        <p><a href="mailto:info.gruppomarciatori@gmail.com">info.gruppomarciatori@gmail.com</a></p>
+        <p><a href="https://www.facebook.com/profile.php?id=100063871909524" rel="noopener">Facebook</a></p>
+        <p><a href="#archivio">Archivio gare</a></p>
+        <p><a href="#documenti">Documenti e codice di condotta</a></p>
+        <p><a href="../index.html">Torna al confronto delle bozze</a></p>
+      </div>
+    </div>
+    <p class="credit">Foto di Calalzo dall'alto: Antonio De Lorenzo, <a href="https://commons.wikimedia.org/wiki/File:CalalzoCadorePanorama.JPG" rel="noopener">Wikimedia Commons</a>, licenza <a href="https://creativecommons.org/licenses/by/2.5/" rel="noopener">CC BY 2.5</a>; ritagliata.</p>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Navigazione rapida">
+  <a href="#top" data-tab="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Home</a>
+  <a href="#gare" data-tab="gare"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20l7-12 4 6 3-4 6 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Gare</a>
+  <a href="#iscrizioni" data-tab="iscr" class="main"><span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span>Iscriviti</a>
+  <a href="#archivio" data-tab="arch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4zM5 9v10h14V9M10 13h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>Archivio</a>
+  <a href="#club" data-tab="club"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M16 5.5a3 3 0 0 1 0 5.6M18 14.5c1.8.8 3 2.8 3 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Club</a>
+</nav>
+
+<script>
+(function(){
+  function $(id){return document.getElementById(id)}
+
+  // ---- Menu mobile (pannello dall'alto)
+  var mBtn=$('menuBtn'),drop=$('drop');
+  function setDrop(o){drop.classList.toggle('open',o);drop.setAttribute('aria-hidden',o?'false':'true');mBtn.setAttribute('aria-expanded',o?'true':'false');$('menuLbl').textContent=o?'Chiudi':'Menu';}
+  mBtn.addEventListener('click',function(){setDrop(!drop.classList.contains('open'))});
+  drop.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setDrop(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drop.classList.contains('open')){setDrop(false);mBtn.focus();}});
+
+  // ---- Tendina "Gare" (desktop)
+  var dd=$('ddGare');
+  dd.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dd.open=false})});
+  document.addEventListener('click',function(e){if(dd.open&&!dd.contains(e.target))dd.open=false});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dd.open){dd.open=false;dd.querySelector('summary').focus();}});
+
+  // ---- Schede Edizione 2027 / Edizioni passate
+  document.querySelectorAll('[role=tablist]').forEach(function(list){
+    var tabs=[].slice.call(list.querySelectorAll('[role=tab]'));
+    function select(t,focus){
+      tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;$(x.getAttribute('aria-controls')).hidden=!on;});
+      if(focus)t.focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){select(t)});
+      t.addEventListener('keydown',function(e){
+        var n=null;
+        if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+        if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+        if(e.key==='Home')n=tabs[0];
+        if(e.key==='End')n=tabs[tabs.length-1];
+        if(n){e.preventDefault();select(n,true);}
+      });
+    });
+  });
+
+  // ---- Edizioni passate: stessi dati per le schede delle gare e per l'archivio (link "#" e foto segnaposto)
+  var DL='<svg aria-hidden="true"><use href="#i-dl"/></svg>';
+  var PAST={
+    giro:{name:'Giro delle Coste',older:['2014','2013','2012','2011','2010','2009','2008','2007'],years:[
+      {y:'2026',sub:'54ª edizione, 1 maggio 2026',docs:['Classifica Giro delle Coste (PDF)','Classifica Trail delle Coste (PDF)'],photos:['gruppo.jpg',0,0,0,0,0]},
+      {y:'2025',sub:'',docs:['Classifica (PDF)'],photos:[0,0,0,0,0,0]},
+      {y:'2024',sub:'1 maggio 2024',docs:['Classifica (PDF)'],photos:[0,0,0,0,0,0]},
+      {y:'2015',sub:'Corsa, MTB e duathlon',docs:['Corsa assoluta','MTB maschile','MTB femminile','Ironman','Ironwoman','Coppie maschili','Coppie femminili','Coppie miste'],photos:[]}
+    ]},
+    kv:{name:'Cadore Km Verticale',older:[],years:[
+      {y:'2025',sub:'31 agosto 2025',docs:['Classifica (PDF)'],photos:[0,0,0,0,0,0]},
+      {y:'2017',sub:'',docs:['Classifica (PDF)'],photos:['montagna.jpg',0,0,0,0,0]},
+      {y:'2016',sub:'',docs:['Classifica (PDF)'],photos:[]},
+      {y:'2015',sub:'6 giugno 2015',docs:['Classifica (PDF)'],photos:[]},
+      {y:'2014',sub:'14 giugno 2014',docs:['Classifica (PDF)'],photos:[]}
+    ]}
+  };
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function renderYears(box,key){
+    var race=PAST[key],years=race.years;
+    box.innerHTML='';
+    var chips=document.createElement('div');chips.className='chips';chips.setAttribute('role','group');chips.setAttribute('aria-label','Scegli l\'anno');
+    var panel=document.createElement('div');panel.className='year';panel.setAttribute('aria-live','polite');
+    box.appendChild(chips);box.appendChild(panel);
+    function show(i){
+      var d=years[i];
+      chips.querySelectorAll('.chip').forEach(function(c,j){c.setAttribute('aria-pressed',j===i?'true':'false')});
+      var h='<h3>'+esc(race.name)+' '+d.y+(d.sub?'<small>'+esc(d.sub)+'</small>':'')+'</h3><ul class="dls">';
+      d.docs.forEach(function(t){h+='<li><a href="#">'+DL+esc(t)+'</a></li>'});
+      if(d.photos.length)h+='<li><a href="#">'+DL+'Scarica tutte le foto (ZIP)</a></li>';
+      h+='</ul>';
+      if(d.photos.length){
+        h+='<div class="pgal">';
+        d.photos.forEach(function(p,k){
+          if(p)h+='<figure><img src="../assets/img/'+p+'" alt="Foto '+(k+1)+' di '+esc(race.name)+' '+d.y+'" loading="lazy"><a class="dl" href="../assets/img/'+p+'" download>'+DL+'Scarica<span class="sr-only"> foto '+(k+1)+'</span></a></figure>';
+          else h+='<figure><div class="ph">Foto da caricare</div></figure>';
+        });
+        h+='</div>';
+      }else{
+        h+='<p class="empty">Per questa edizione non abbiamo ancora foto. Se ne hai, mandale a <a href="mailto:info.gruppomarciatori@gmail.com">info.gruppomarciatori@gmail.com</a>.</p>';
+      }
+      panel.innerHTML=h;
+    }
+    years.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=d.y;b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){show(i)});chips.appendChild(b);});
+    show(0);
+    if(race.older.length){
+      var o=document.createElement('div');o.className='older';
+      o.innerHTML='<h4>Classifiche 2007–2014</h4><ul>'+race.older.map(function(y){return '<li><a href="#">'+y+'</a></li>'}).join('')+'</ul>';
+      box.appendChild(o);
+    }
+  }
+  document.querySelectorAll('[data-years]').forEach(function(box){renderYears(box,box.getAttribute('data-years'))});
+  var archBox=$('archBox'),segBtns=[].slice.call(document.querySelectorAll('[data-arch]'));
+  function arch(key){segBtns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-arch')===key?'true':'false')});renderYears(archBox,key);}
+  segBtns.forEach(function(b){b.addEventListener('click',function(){arch(b.getAttribute('data-arch'))})});
+  arch('giro');
+
+  // ---- Barra in basso: evidenzia la sezione in cui ti trovi
+  var tabLinks={};document.querySelectorAll('.tabbar a').forEach(function(a){tabLinks[a.getAttribute('data-tab')]=a});
+  var SEC={top:'home',gare:'gare',giro:'gare','km-verticale':'gare',archivio:'arch',iscrizioni:'iscr',giovani:'club',club:'club',documenti:'club',contatti:'club'};
+  function mark(k){Object.keys(tabLinks).forEach(function(t){var on=t===k;tabLinks[t].classList.toggle('on',on);if(on)tabLinks[t].setAttribute('aria-current','true');else tabLinks[t].removeAttribute('aria-current');});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var id=e.target.id||'top';mark(SEC[id]||'home');}})},{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('.hero,#gare,#giro,#km-verticale,#archivio,#iscrizioni,#giovani,#club,#documenti,#contatti').forEach(function(s){io.observe(s)});
+  }
+  mark('home');
+
+  // ---- Iscrizione a passaggi (date 2027 da confermare)
+  var RACES={
+    giro:{name:'Giro delle Coste',date:'Sabato 1 maggio 2027 (da confermare)',short:'1 maggio 2027',day:new Date(2027,4,1),dead:'Mercoledì 28 aprile',fee:12,dayFee:'In piazza la mattina della gara: 15 €',ritiro:'Ufficio gara in piazza a Calalzo',minAge:14},
+    trail:{name:'Trail delle Coste',date:'Sabato 1 maggio 2027 (da confermare)',short:'1 maggio 2027',day:new Date(2027,4,1),dead:'Mercoledì 28 aprile',fee:12,dayFee:'In piazza la mattina della gara: 15 €',ritiro:'Ufficio gara in piazza a Calalzo',minAge:14},
+    kv:{name:'Cadore Km Verticale',date:'Fine agosto 2027 (da confermare)',short:'Fine agosto 2027',day:new Date(2027,7,29),dead:'Il giovedì prima della gara, ore 24',fee:20,dayFee:'Il giorno della gara, fino alle 08:30: 25 €',ritiro:'Alla partenza a Vallesella',minAge:0}
+  };
+  var form=$('regForm'),steps=[].slice.call(form.querySelectorAll('.step')),prog=[].slice.call(document.querySelectorAll('#progress li')),cur=0;
+  function val(name){var el=form.querySelector('input[name='+name+']:checked');return el?el.value:''}
+  function ageAt(b,day){var a=day.getFullYear()-b.getFullYear(),m=day.getMonth()-b.getMonth();if(m<0||(m===0&&day.getDate()<b.getDate()))a--;return a;}
+  function setSt(el,text,ok){el.textContent=text;el.className='st '+(ok?'st-ok':'st-wait');}
+  function birth(){var v=$('nascita').value,b=v?new Date(v):null;return b&&!isNaN(b)?b:null;}
+
+  function update(){
+    var r=RACES[val('gara')],p=val('pag'),later=val('certmode')==='dopo';
+    $('s-gara').textContent=r.name;$('s-data').textContent=r.date;$('s-dead').textContent=r.dead;
+    $('s-quota').textContent=r.fee+' €';$('s-day').textContent=r.dayFee;$('bankAmount').textContent=r.fee+' €';
+    var who=($('cognome').value.trim()||'Cognome')+' '+($('nome').value.trim()||'Nome');
+    $('causale').textContent='Iscrizione '+r.name+' 2027 – '+who;
+    $('cashWhere').textContent=r.ritiro.charAt(0).toLowerCase()+r.ritiro.slice(1);
+    $('payOnline').classList.toggle('hidden',p!=='online');$('payBank').classList.toggle('hidden',p!=='bonifico');$('payCash').classList.toggle('hidden',p!=='contanti');
+    $('certNow').classList.toggle('hidden',later);$('certLater').classList.toggle('hidden',!later);
+    setSt($('s-cert'),later?'Da inviare più tardi':'Lo carichi adesso',!later);
+    setSt($('s-pag'),{online:'Online adesso',bonifico:'Bonifico',contanti:'Contanti al ritiro'}[p],p==='online');
+    var b=birth();$('minorBox').classList.toggle('hidden',!(val('gara')==='kv'&&b&&ageAt(b,r.day)<18));
+    $('nextBtn').textContent=cur<steps.length-1?'Avanti':(p==='online'?'Conferma e paga '+r.fee+' €':'Conferma iscrizione');
+  }
+  form.addEventListener('input',update);form.addEventListener('change',update);
+
+  function setErr(f,key,on,msg){
+    var box=f.querySelector('[data-f="'+key+'"]');if(!box)return;
+    box.classList.toggle('invalid',on);
+    var m=box.querySelector('.err-msg');if(msg&&m)m.textContent=msg;
+    box.querySelectorAll('input,select').forEach(function(inp){inp.setAttribute('aria-invalid',on?'true':'false')});
+  }
+  var EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function check(i){
+    var errs=[],r=RACES[val('gara')];
+    function req(key,ok,label,msg){setErr(form,key,!ok,msg);if(!ok)errs.push({key:key,label:label});}
+    if(i===0){req('gara',!!val('gara'),'Tipo di gara');}
+    if(i===1){
+      req('nome',$('nome').value.trim(),'Nome');
+      req('cognome',$('cognome').value.trim(),'Cognome');
+      var b=birth();
+      if(!b)req('nascita',false,'Data di nascita','Inserisci la data di nascita.');
+      else if(r.minAge&&ageAt(b,r.day)<r.minAge)req('nascita',false,'Data di nascita','Per '+r.name+' servono almeno '+r.minAge+' anni il giorno della gara.');
+      else setErr(form,'nascita',false);
+      req('sesso',!!val('sesso'),'Sesso');
+      req('societa',$('societa').value.trim(),'Società');
+      req('email',EMAIL.test($('email').value.trim()),'Email');
+      if(val('gara')==='kv'&&b&&ageAt(b,r.day)<18)req('consenso',$('consenso').checked,'Consenso del genitore');else setErr(form,'consenso',false);
+    }
+    if(i===2){if(val('certmode')==='ora')req('certfile',$('certfile').files.length>0,'Certificato medico');else setErr(form,'certfile',false);}
+    if(i===3){req('reg',$('c-reg').checked,'Regolamento ed esonero di responsabilità');req('priv',$('c-priv').checked,'Trattamento dei dati');}
+    return errs;
+  }
+  function showErrs(errs){
+    var box=$('errors'),list=$('errList');list.innerHTML='';
+    if(!errs.length){box.classList.remove('show');return;}
+    errs.forEach(function(x){var li=document.createElement('li'),a=document.createElement('a');a.href='#';a.textContent=x.label;
+      a.addEventListener('click',function(ev){ev.preventDefault();var f=form.querySelector('[data-f="'+x.key+'"] input, [data-f="'+x.key+'"] select');if(f)f.focus();});
+      li.appendChild(a);list.appendChild(li);});
+    box.classList.add('show');box.focus();
+  }
+  function go(i,focus){
+    cur=i;
+    steps.forEach(function(s,j){s.classList.toggle('hidden',j!==i)});
+    prog.forEach(function(li,j){li.classList.toggle('done',j<i);if(j===i)li.setAttribute('aria-current','step');else li.removeAttribute('aria-current');});
+    $('backBtn').classList.toggle('hidden',i===0);
+    showErrs([]);update();
+    if(focus)steps[i].querySelector('h3').focus();
+  }
+  $('backBtn').addEventListener('click',function(){go(Math.max(0,cur-1),true)});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var errs=check(cur);
+    if(errs.length){showErrs(errs);return;}
+    if(cur<steps.length-1){go(cur+1,true);return;}
+    // Ultimo passo: ricontrolla tutto (la gara potrebbe essere cambiata), poi mostra il pettorale. Nessun dato inviato.
+    for(var i=0;i<steps.length;i++){var e2=check(i);if(e2.length){go(i,false);showErrs(e2);return;}}
+    var r=RACES[val('gara')],later=val('certmode')==='dopo',p=val('pag');
+    $('b-gara').textContent=r.name+' 2027';
+    $('b-nome').textContent=$('nome').value.trim()+' '+$('cognome').value.trim();
+    $('b-soc').textContent=$('societa').value.trim();
+    $('b-quota').textContent=r.fee+' €';$('b-data').textContent=r.short;$('b-ritiro').textContent=r.ritiro;
+    setSt($('b-cert'),later?'Da inviare':'Caricato – in attesa di approvazione',!later);
+    setSt($('b-pag'),{online:'Pagato online',bonifico:'Bonifico – da verificare sul conto',contanti:'Contanti al ritiro'}[p],p==='online');
+    $('b-mailnote').textContent=later?', con il link per caricare il certificato':'';
+    $('regArea').classList.add('hidden');
+    var d=$('done');d.classList.remove('hidden');d.focus();d.scrollIntoView({block:'start'});
+  });
+  $('again').addEventListener('click',function(){
+    form.reset();
+    form.querySelectorAll('.invalid').forEach(function(f){f.classList.remove('invalid')});
+    $('done').classList.add('hidden');$('regArea').classList.remove('hidden');go(0,true);
+  });
+
+  // Gara preselezionata dai bottoni "Iscriviti" e dall'indirizzo (?gara=giro|trail|kv)
+  function preselect(k){var el=$('r-'+k);if(el){el.checked=true;if(!$('done').classList.contains('hidden'))return;go(0,false);}}
+  document.querySelectorAll('[data-race]').forEach(function(a){a.addEventListener('click',function(){preselect(a.getAttribute('data-race'))})});
+  var qs=new URLSearchParams(location.search).get('gara');if(qs)preselect(qs);
+
+  // ---- Invio del certificato in un secondo momento
+  var cf=$('certForm');
+  cf.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok1=EMAIL.test($('c2email').value.trim()),ok2=!!$('c2gara').value,ok3=$('c2file').files.length>0;
+    setErr(cf,'c2email',!ok1);setErr(cf,'c2gara',!ok2);setErr(cf,'c2file',!ok3);
+    if(!(ok1&&ok2&&ok3)){var first=cf.querySelector('.invalid input,.invalid select');if(first)first.focus();return;}
+    cf.classList.add('hidden');var ok=$('certOk');ok.classList.remove('hidden');ok.focus();
+  });
+
+  go(0,false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuovo sito Marciatori Calalzo – le proposte</title>
+<meta name="description" content="Bozze grafiche per il nuovo sito del Gruppo Marciatori Calalzo – Atletica Cadore, con iscrizioni online alle gare.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17202E;
+    --muted: #5A6577;
+    --line: #DDE2EA;
+    --bg: #FFFFFF;
+    --soft: #F3F5F8;
+    --navy: #0E3B24;
+    --focus: #A9DC6E;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Public Sans", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  a { color: var(--navy); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+  header.top {
+    background: var(--navy);
+    color: #fff;
+    padding: 56px 0 64px;
+  }
+  header.top p.club { margin: 0 0 12px; font-weight: 600; color: #A9DC6E; }
+  header.top h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+  }
+  header.top .lead { max-width: 60ch; margin: 20px 0 0; color: #E4EFE6; font-size: 1.125rem; }
+
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.01em; }
+  h3 { font-size: 1.25rem; margin: 0 0 6px; line-height: 1.25; }
+  .intro { max-width: 65ch; color: var(--muted); margin: 0 0 32px; }
+
+  /* Drafts */
+  .drafts { display: grid; gap: 40px; }
+  .draft {
+    display: grid;
+    gap: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .draft:last-child { border-bottom: 0; padding-bottom: 0; }
+  .shots { display: grid; grid-template-columns: 1fr 0.38fr; gap: 12px; align-items: start; }
+  .shots img { border: 1px solid var(--line); border-radius: 10px; background: var(--soft); width: 100%; }
+  .shots .desk { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+  .shots .mob { aspect-ratio: 390 / 844; object-fit: cover; object-position: top; border-radius: 18px; }
+  .draft p { margin: 0 0 12px; max-width: 62ch; }
+  .swatches { display: flex; gap: 6px; margin: 4px 0 16px; padding: 0; list-style: none; }
+  .swatches li { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); }
+  .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
+  .btn {
+    display: inline-flex; align-items: center; min-height: 48px;
+    padding: 0 22px; border-radius: 999px;
+    background: var(--navy); color: #fff; text-decoration: none; font-weight: 700;
+  }
+  .btn:hover { background: #1F8A4C; }
+
+  @media (min-width: 900px) {
+    .draft { grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: center; }
+  }
+
+  /* Lists */
+  .cols { display: grid; gap: 28px; }
+  @media (min-width: 760px) { .cols { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  ul.plain { margin: 0; padding-left: 1.2em; }
+  ul.plain li { margin-bottom: 8px; }
+  ul.plain li::marker { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 10px 12px 0; border-bottom: 1px solid var(--line); }
+  th { font-weight: 700; width: 34%; }
+  .table-scroll { overflow-x: auto; }
+
+  .note { background: var(--soft); border-radius: 12px; padding: 20px 22px; max-width: 75ch; }
+  .note p { margin: 0 0 8px; }
+  .note p:last-child { margin: 0; }
+
+  table.sheet { font-size: 0.9rem; min-width: 860px; }
+  table.sheet th, table.sheet td { padding: 10px 12px; border: 1px solid var(--line); width: auto; white-space: nowrap; }
+  table.sheet thead th { background: var(--soft); font-weight: 700; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--soft); font-weight: 600; font-size: 0.85rem; }
+  .tag.ok { background: #DDF2E3; color: #145A2E; }
+  .tag.wait { background: #E3ECF8; color: #1D3D6B; }
+  .tag.warn { background: #FCEBC7; color: #6B4A00; }
+
+  footer { background: var(--soft); padding: 32px 0 48px; color: var(--muted); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="club">Gruppo Marciatori Calalzo – Atletica Cadore</p>
+    <h1>Le proposte per il nuovo sito</h1>
+    <p class="lead">Quattro bozze con i colori sociali, il verde e il rosso del logo, costruite con i contenuti reali del sito attuale. Tutte funzionano bene da telefono e aggiungono le iscrizioni online alle gare. Si possono realizzare su Wix, senza cambiare piattaforma.</p>
+  </div>
+</header>
+
+<main>
+  <section id="bozze">
+    <div class="wrap">
+      <h2>Le bozze</h2>
+      <p class="intro">Aprite ogni bozza dal telefono e dal computer: sono pagine navigabili, con menu, sezioni e un modulo di iscrizione di prova. Il modulo non invia dati.</p>
+
+      <div class="drafts">
+        <article class="draft">
+          <div class="shots">
+            <img class="desk" src="assets/preview/bozza-1-desktop.jpg" alt="Bozza 1, vista da computer" loading="lazy">
+            <img class="mob" src="assets/preview/bozza-1-mobile.jpg" alt="Bozza 1, vista da telefono" loading="lazy">
+          </div>
+          <div>
+            <h3>Bozza 1 – Pista</h3>
+            <ul class="swatches" aria-label="Colori">
+              <li style="background:#1F8A4C" title="Verde stemma"></li>
+              <li style="background:#0E3B24" title="Bosco"></li>
+              <li style="background:#A9DC6E" title="Verde divisa (da verificare)"></li>
+              <li style="background:#C4283C" title="Rosso pista"></li>
+              <li style="background:#F1F5F0" title="Nebbia"></li>
+            </ul>
+            <p>Gli anelli verdi e rossi della "C" del logo, che ricordano le corsie di una pista, diventano il segno grafico del sito: in apertura una grande pista con dentro la foto del gruppo. Fondo chiaro, verde dello stemma come colore principale.</p>
+            <p class="meta">Tutto in una pagina sola, da scorrere. A iscrizione completata il riepilogo appare come un pettorale.</p>
+            <a class="btn" href="bozza-1-pista/">Apri la bozza 1</a>
+          </div>
+        </article>
+
+        <article class="draft">
+          <div class="shots">
+            <img class="desk" src="assets/preview/bozza-2-desktop.jpg" alt="Bozza 2, vista da computer" loading="lazy">
+            <img class="mob" src="assets/preview/bozza-2-mobile.jpg" alt="Bozza 2, vista da telefono" loading="lazy">
+          </div>
+          <div>
+            <h3>Bozza 2 – Pagine</h3>
+            <ul class="swatches" aria-label="Colori">
+              <li style="background:#1F8A4C" title="Verde stemma"></li>
+              <li style="background:#0E3B24" title="Bosco"></li>
+              <li style="background:#A9DC6E" title="Verde divisa (da verificare)"></li>
+              <li style="background:#C4283C" title="Rosso pista"></li>
+              <li style="background:#F1F5F0" title="Nebbia"></li>
+            </ul>
+            <p>Stessi colori e stesso logo della bozza 1, ma organizzata come un sito a pagine separate, come le voci del menu su Wix: Home, Giro delle Coste, Km Verticale, Iscrizione, Archivio, Giovani, Club e Contatti. In apertura la foto di Calalzo e delle sue montagne.</p>
+            <p class="meta">Le due gare usano la stessa pagina modello. L'iscrizione ha una pagina sua, in tre passaggi.</p>
+            <a class="btn" href="bozza-2-pagine/">Apri la bozza 2</a>
+          </div>
+        </article>
+
+        <article class="draft">
+          <div class="shots">
+            <img class="desk" src="assets/preview/bozza-3-desktop.jpg" alt="Bozza 3, vista da computer" loading="lazy">
+            <img class="mob" src="assets/preview/bozza-3-mobile.jpg" alt="Bozza 3, vista da telefono" loading="lazy">
+          </div>
+          <div>
+            <h3>Bozza 3 – Divisa</h3>
+            <ul class="swatches" aria-label="Colori">
+              <li style="background:#1F8A4C" title="Verde stemma"></li>
+              <li style="background:#0E3B24" title="Bosco"></li>
+              <li style="background:#A9DC6E" title="Verde divisa (da verificare)"></li>
+              <li style="background:#C4283C" title="Rosso pista"></li>
+              <li style="background:#F1F5F0" title="Nebbia"></li>
+            </ul>
+            <p>Il verde chiaro delle divise diventa il colore dominante: un sito luminoso e sportivo. In apertura la prossima gara è presentata come un grande pettorale.</p>
+            <p class="meta">Pagina unica. Su telefono il menu è una barra in basso, come in un'app. Iscrizione guidata in quattro passaggi.</p>
+            <a class="btn" href="bozza-3-divisa/">Apri la bozza 3</a>
+          </div>
+        </article>
+
+        <article class="draft">
+          <div class="shots">
+            <img class="desk" src="assets/preview/bozza-4-desktop.jpg" alt="Bozza 4, vista da computer" loading="lazy">
+            <img class="mob" src="assets/preview/bozza-4-mobile.jpg" alt="Bozza 4, vista da telefono" loading="lazy">
+          </div>
+          <div>
+            <h3>Bozza 4 – Bosco</h3>
+            <ul class="swatches" aria-label="Colori">
+              <li style="background:#1F8A4C" title="Verde stemma"></li>
+              <li style="background:#0E3B24" title="Bosco"></li>
+              <li style="background:#A9DC6E" title="Verde divisa (da verificare)"></li>
+              <li style="background:#C4283C" title="Rosso pista"></li>
+              <li style="background:#F1F5F0" title="Nebbia"></li>
+            </ul>
+            <p>Versione scura ed elegante, con il verde bosco come sfondo e gli anelli verde, bianco e rosso del logo sopra la foto di Calalzo. Dà spazio alla storia del club dal 1973.</p>
+            <p class="meta">Pagina unica. L'archivio è una linea del tempo anno per anno, con entrambe le gare.</p>
+            <a class="btn" href="bozza-4-bosco/">Apri la bozza 4</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cosa-cambia">
+    <div class="wrap">
+      <h2>Cosa cambia rispetto a oggi</h2>
+      <p class="intro">Queste migliorie sono comuni a tutte le bozze: cambia solo lo stile.</p>
+      <div class="cols">
+        <div>
+          <h3>Oggi</h3>
+          <ul class="plain">
+            <li>Da telefono le pagine sono piccole e vanno ingrandite con le dita.</li>
+            <li>La storia del club in "Chi siamo" è un'immagine con il testo dentro: non si legge bene e Google non la trova.</li>
+            <li>Per iscriversi bisogna mandare una mail con i dati, il certificato e la ricevuta del bonifico.</li>
+            <li>I risultati sono sparsi su tre pagine diverse, con link a Google+ e Picasa che non esistono più.</li>
+            <li>In home non si capisce quale sia la prossima gara.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Con il nuovo sito</h3>
+          <ul class="plain">
+            <li>Pagine pensate prima per il telefono, poi allargate per il computer.</li>
+            <li>Giro delle Coste e Km Verticale hanno la stessa struttura: l'edizione dell'anno con volantino, informazioni e iscrizione, e le edizioni passate anno per anno con classifica e foto da scaricare.</li>
+            <li>Un archivio gare raggiungibile dal menu, con tutte le edizioni passate in un posto solo.</li>
+            <li>Iscrizione online con i campi indicati dal consiglio. Il certificato si può caricare subito o mandare dopo, e si paga online, con bonifico o in contanti al ritiro.</li>
+            <li>Una sezione per le attività giovanili, con i corsi e i numeri da chiamare.</li>
+            <li>La storia del club, il consiglio direttivo e il codice di condotta come testo vero.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="organizzatori">
+    <div class="wrap">
+      <h2>Cosa ricevono gli organizzatori</h2>
+      <p class="intro">Ogni iscrizione diventa una riga di una tabella, che si scarica in Excel. Le ultime due colonne dicono subito chi deve ancora mandare il certificato e di chi va controllato il bonifico sul conto del gruppo. I nomi qui sotto sono di esempio.</p>
+      <div class="table-scroll">
+        <table class="sheet">
+          <thead>
+            <tr><th>Nome</th><th>Cognome</th><th>Nascita</th><th>Sesso</th><th>Tipo di gara</th><th>Società</th><th>Email</th><th>Certificato</th><th>Pagamento</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mario</td><td>Rossi</td><td>12/03/1988</td><td>M</td><td>Giro classico</td><td>G.M. Calalzo</td><td>mario@…</td><td><span class="tag ok">Approvato</span></td><td><span class="tag ok">Online</span></td></tr>
+            <tr><td>Giulia</td><td>Bianchi</td><td>04/07/1995</td><td>F</td><td>Trail</td><td>Libero</td><td>giulia@…</td><td><span class="tag wait">Da approvare</span></td><td><span class="tag warn">Bonifico da verificare</span></td></tr>
+            <tr><td>Luca</td><td>Verdi</td><td>21/11/2001</td><td>M</td><td>Trail</td><td>Atl. Belluno</td><td>luca@…</td><td><span class="tag warn">Da inviare</span></td><td><span class="tag">Contanti al ritiro</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cols" style="margin-top:32px">
+        <div>
+          <h3>Il certificato medico</h3>
+          <ul class="plain">
+            <li>Se l'atleta lo carica subito, il file finisce in una cartella e la persona incaricata riceve una mail per approvarlo.</li>
+            <li>Se lo manda dopo, nella colonna resta "Da inviare". Il sito gli manda un promemoria con il link per caricarlo.</li>
+            <li>Senza certificato approvato, al ritiro del pettorale si vede subito.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Il pagamento</h3>
+          <ul class="plain">
+            <li>Online (carta o PayPal): risulta già pagato, non c'è niente da controllare.</li>
+            <li>Bonifico: l'atleta vede IBAN e causale già compilata. Va controllato solo chi ha scelto questa opzione.</li>
+            <li>Contanti: paga in piazza al ritiro del pettorale.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wix">
+    <div class="wrap">
+      <h2>Come si realizza su Wix</h2>
+      <p class="intro">Le bozze sono pagine statiche fatte per mostrare l'idea. Sul sito vero ogni parte corrisponde a uno strumento che Wix offre già.</p>
+      <div class="table-scroll">
+        <table>
+          <tbody>
+            <tr><th scope="row">Impaginazione per telefono</th><td>Editor <strong>Wix Studio</strong> (o l'editor attuale con la vista mobile curata a parte). Studio gestisce meglio griglie e punti di rottura tra telefono, tablet e computer.</td></tr>
+            <tr><th scope="row">Modulo di iscrizione</th><td><strong>Wix Forms</strong>: data di nascita con calendario, menu per il tipo di gara, caricamento file facoltativo per il certificato, scelta del pagamento. Le risposte si vedono nel pannello di Wix e si esportano in Excel (CSV). Il collegamento automatico a un Google Sheet è da verificare.</td></tr>
+            <tr><th scope="row">Mail di avviso e promemoria</th><td><strong>Wix Automations</strong>: mail a chi approva i certificati quando arriva un file, e mail di conferma all'atleta.</td></tr>
+            <tr><th scope="row">Certificato mandato dopo</th><td>Un secondo modulo, piccolo, con email, gara e file.</td></tr>
+            <tr><th scope="row">Pagamento online</th><td>Wix Payments o PayPal collegati al conto della società. Serve un piano Wix a pagamento che abiliti i pagamenti: va verificato quello in uso oggi.</td></tr>
+            <tr><th scope="row">Volantino e informazioni dell'anno</th><td>Si cambiano dall'editor: si carica il nuovo PDF o JPG e si aggiorna il testo, senza toccare la grafica.</td></tr>
+            <tr><th scope="row">Edizioni passate</th><td><strong>CMS di Wix</strong>: una riga per ogni edizione (gara, anno, classifica PDF, album). Aggiungere un anno vuol dire compilare una riga.</td></tr>
+            <tr><th scope="row">Foto scaricabili</th><td>Wix Pro Gallery, un album per edizione, con il pulsante di download attivo.</td></tr>
+            <tr><th scope="row">Anelli del logo e grafiche</th><td>Immagini vettoriali (SVG) caricate come "vector art".</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="note">
+    <div class="wrap">
+      <h2>Da sapere prima di guardarle</h2>
+      <div class="note">
+        <p>Il logo è ridisegnato a mano dalla locandina 2026, quindi è provvisorio. Sul sito attuale non c'è un file del logo: se ne avete uno vettoriale, va al suo posto. Anche il verde chiaro delle divise è stimato e va verificato.</p>
+        <p>Le date 2027 (Giro e Trail delle Coste il 1° maggio, Km Verticale a fine agosto) sono indicative e vanno confermate.</p>
+        <p>Testi, quote, IBAN, nomi del consiglio direttivo e foto del gruppo sono presi dal sito attuale. La foto di Calalzo dall'alto è di Antonio De Lorenzo (Wikimedia Commons, licenza CC BY 2.5). I link ai risultati sono segnaposto.</p>
+        <p>Si possono mescolare: per esempio i colori di una bozza con la struttura di un'altra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="domande">
+    <div class="wrap">
+      <h2>Da decidere insieme</h2>
+      <ul class="plain" style="max-width:75ch">
+        <li><strong>Email nel modulo.</strong> Non era nell'elenco, ma l'abbiamo aggiunta: serve per mandare la conferma e il promemoria del certificato.</li>
+        <li><strong>Quota in contanti.</strong> Chi si iscrive online e paga al ritiro paga 12 € (o 20 € per il Verticale), oppure la quota del giorno gara?</li>
+        <li><strong>Chi approva i certificati.</strong> Una persona sola o più persone? A quale indirizzo mandiamo gli avvisi?</li>
+        <li><strong>Attività giovanili.</strong> Servono fasce d'età, giorni, orari, luogo e i numeri dei referenti: nelle bozze sono segnaposto.</li>
+        <li><strong>Piano Wix.</strong> Quale piano è attivo oggi, e se permette i pagamenti online.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Proposta di un atleta del Gruppo Marciatori Calalzo. Non è il sito ufficiale della società: quello è <a href="https://www.marciatoricalalzo.org/">marciatoricalalzo.org</a>.
+  </div>
+</footer>
+
+</body>
+</html>
